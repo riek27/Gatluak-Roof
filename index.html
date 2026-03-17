@@ -1,694 +1,1321 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gatluak Roof Expert | Houston's Premier Roofing Contractor</title>
-    <meta name="description" content="Gatluak Roof Expert is Houston's trusted roofing company offering roof repair, replacement, installation, and storm damage services. Get a free quote today.">
-    <meta name="keywords" content="Houston Roofing Company, Roof Repair Houston, Roof Replacement Houston TX, Best Roofing Contractor Houston, Emergency Roof Repair Houston">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>James Roofing | Premier Roofing Services in Houston, Texas</title>
+    <meta name="description" content="James Roofing is Houston's trusted roofing company offering professional roof installation, repair, replacement, and storm damage services. Get a free quote today.">
+    <meta name="keywords" content="Roofing Houston, Roof Repair, Roof Replacement, Commercial Roofing, Residential Roofing, Storm Damage, James Roofing, Houston Roofers, Roof Inspection, Gutter Installation, Emergency Roofing">
+    <meta name="author" content="James Roofing">
+    <meta name="geo.region" content="US-TX">
+    <meta name="geo.placename" content="Houston">
+    <meta name="geo.position" content="29.7604;-95.3698">
+    <meta name="ICBM" content="29.7604, -95.3698">
     
-    <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Gatluak Roof Expert | Houston's Premier Roofing Contractor">
-    <meta property="og:description" content="Trusted roofing experts in Houston. Free estimates, 24/7 emergency service.">
-    <meta property="og:image" content="https://image.qwenlm.ai/.../og-image.jpg"> <!-- replace with actual -->
-    <meta property="og:url" content="https://www.gatluakroofexpert.com">
-    <meta name="twitter:card" content="summary_large_image">
-    <link rel="canonical" href="https://www.gatluakroofexpert.com">
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <!-- Font Awesome -->
+    <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Custom Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
-                    colors: {
-                        brand: {
-                            dark: '#0f172a',
-                            light: '#f8fafc',
-                            accent: '#f97316', // Orange accent
-                            accentHover: '#ea580c',
-                        }
-                    },
-                    backgroundImage: {
-                        'hero-pattern': "linear-gradient(to right bottom, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7)), url('https://image.qwenlm.ai/public_source/3c007ea5-36c0-4050-a063-0c7d553b150c/126237e29-ae0e-43da-aaa6-a7ff564c6111.png')",
-                    }
-                }
+    <!-- JSON-LD Structured Data for Local Business -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "RoofingContractor",
+        "name": "James Roofing",
+        "image": "https://image.qwenlm.ai/public_source/228bb3ef-22ca-46a5-84f5-c925139a8977/1ea40deca-b86b-43d3-98ff-7f931ca18c03.png",
+        "url": "https://www.jamesroofing.com",
+        "telephone": "+17135550198",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "1234 Roofing Blvd, Suite 100",
+            "addressLocality": "Houston",
+            "addressRegion": "TX",
+            "postalCode": "77002",
+            "addressCountry": "US"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 29.7604,
+            "longitude": -95.3698
+        },
+        "openingHoursSpecification": [
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+                "opens": "08:00",
+                "closes": "18:00"
+            },
+            {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": "Saturday",
+                "opens": "09:00",
+                "closes": "14:00"
             }
-        }
+        ],
+        "priceRange": "$$",
+        "description": "Houston's premier roofing contractor offering expert roof installation, repair, and storm damage restoration.",
+        "areaServed": ["Houston","Katy","Sugar Land","The Woodlands","Pearland","Cypress","Pasadena","Spring","Missouri City","Baytown"]
+    }
     </script>
 
     <style>
-        /* Custom Styles */
-        body { font-family: 'Inter', sans-serif; overflow-x: hidden; }
-        
-        /* Glassmorphism */
-        .glass {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        /* --- CSS VARIABLES & RESET --- */
+        :root {
+            --primary-dark: #1a1a1a;
+            --primary-charcoal: #2c2c2c;
+            --accent-gold: #c5a059;
+            --accent-gold-hover: #b08d4b;
+            --text-light: #f4f4f4;
+            --text-gray: #a0a0a0;
+            --white: #ffffff;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-blur: 12px;
+            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.1);
+            --shadow-hover: 0 25px 50px rgba(0, 0, 0, 0.3);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            --gradient-gold: linear-gradient(135deg, var(--accent-gold) 0%, #dbb87c 100%);
         }
 
-        /* Typing Cursor */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: var(--primary-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        :focus-visible {
+            outline: 2px solid var(--accent-gold);
+            outline-offset: 4px;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            color: var(--white);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+            height: auto;
+        }
+
+        /* --- UTILITIES --- */
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            width: 100%;
+        }
+
+        .section-padding {
+            padding: 5rem 0;
+        }
+
+        .text-center { text-align: center; }
+        .text-accent { color: var(--accent-gold); }
+        
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2.5rem;
+            background: var(--gradient-gold);
+            color: var(--white);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+            min-height: 50px;
+            border-radius: 2px;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.6s;
+            z-index: -1;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(197, 160, 89, 0.4);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1px solid var(--white);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn-outline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--white);
+            transition: left 0.4s;
+            z-index: -1;
+        }
+
+        .btn-outline:hover {
+            color: var(--primary-dark);
+            border-color: var(--white);
+        }
+
+        .btn-outline:hover::before {
+            left: 0;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 5vw, 2.5rem);
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--gradient-gold);
+            border-radius: 2px;
+        }
+
+        .section-subtitle {
+            color: var(--accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+
+        /* --- TOP BAR --- */
+        .top-bar {
+            background-color: #000;
+            padding: 0.8rem 0;
+            font-size: 0.85rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .top-bar-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--text-gray);
+            white-space: nowrap;
+            transition: color 0.3s;
+        }
+
+        .contact-item:hover {
+            color: var(--accent-gold);
+        }
+
+        .contact-item i { color: var(--accent-gold); }
+
+        /* --- NAVIGATION --- */
+        .navbar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 1.5rem 0;
+            transition: var(--transition);
+            background: transparent;
+        }
+
+        .navbar.scrolled {
+            position: fixed;
+            background: rgba(26, 26, 26, 0.98);
+            backdrop-filter: blur(10px);
+            padding: 0.8rem 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            animation: slideDown 0.3s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 4vw, 1.8rem);
+            font-weight: 700;
+            color: var(--white);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            z-index: 1001;
+        }
+
+        .logo i { color: var(--accent-gold); }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-item { position: relative; }
+
+        .nav-link {
+            font-size: 0.95rem;
+            font-weight: 500;
+            color: var(--text-light);
+            position: relative;
+            padding: 0.5rem 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gradient-gold);
+            transition: var(--transition);
+        }
+
+        .nav-link:hover::after,
+        .nav-link:focus-visible::after { width: 100%; }
+
+        /* Dropdown Desktop */
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--primary-charcoal);
+            min-width: 220px;
+            padding: 1rem 0;
+            border-top: 2px solid var(--accent-gold);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: var(--transition);
+            box-shadow: var(--shadow-soft);
+            z-index: 1000;
+        }
+
+        .nav-item:hover .dropdown,
+        .nav-item:focus-within .dropdown {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown li a {
+            display: block;
+            padding: 0.8rem 1.5rem;
+            color: var(--text-gray);
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .dropdown li a:hover,
+        .dropdown li a:focus-visible {
+            background: rgba(255,255,255,0.05);
+            color: var(--accent-gold);
+            padding-left: 2rem;
+            outline: none;
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--white);
+            cursor: pointer;
+            z-index: 1001;
+            padding: 10px;
+            background: transparent;
+            border: none;
+        }
+
+        /* --- HERO SECTION (perfect mobile spacing) --- */
+        .hero {
+            min-height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.4)), url('https://image.qwenlm.ai/public_source/228bb3ef-22ca-46a5-84f5-c925139a8977/1ea40deca-b86b-43d3-98ff-7f931ca18c03.png');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            align-items: center; /* centered on desktop */
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(197, 160, 89, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 4rem;
+            align-items: center;
+            width: 100%;
+            padding: 5rem 0; /* base padding, overridden on mobile */
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+        }
+
+        .typing-container {
+            color: var(--accent-gold);
+            min-height: 1.2em;
+            display: inline-block;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
         .cursor {
             display: inline-block;
             width: 3px;
-            background-color: #f97316;
+            background-color: var(--accent-gold);
             animation: blink 1s infinite;
+            margin-left: 2px;
         }
+
         @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-        /* Navbar Transition */
-        .nav-scrolled {
-            background-color: rgba(15, 23, 42, 0.98);
-            backdrop-filter: blur(10px);
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        .hero-text p {
+            font-size: 1.15rem;
+            color: var(--text-gray);
+            margin-bottom: 2.5rem;
+            max-width: 600px;
         }
 
-        /* Dropdown Animation (desktop) */
-        .dropdown-menu {
-            opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.3s ease;
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
         }
-        .group:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateY(0); }
 
-        /* Lightbox */
-        #lightbox { transition: opacity 0.3s ease; }
-        html { scroll-padding-top: 80px; }
+        .hero-form-wrapper {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(var(--glass-blur));
+            -webkit-backdrop-filter: blur(var(--glass-blur));
+            border: 1px solid var(--glass-border);
+            padding: 2.5rem;
+            border-radius: 4px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            width: 100%;
+            transition: var(--transition);
+        }
 
-        /* Service Card Image Hover */
-        .service-img-container {
+        .hero-form-wrapper:hover {
+            box-shadow: 0 30px 60px rgba(197, 160, 89, 0.2);
+            border-color: rgba(197, 160, 89, 0.3);
+        }
+
+        .form-header {
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .form-header h3 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .form-header p { color: var(--text-gray); font-size: 0.9rem; }
+
+        .form-group { margin-bottom: 1.2rem; }
+
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(0,0,0,0.3);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: var(--white);
+            font-family: 'Manrope', sans-serif;
+            border-radius: 2px;
+            transition: var(--transition);
+            font-size: 1rem;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--accent-gold);
+            background: rgba(0,0,0,0.5);
+            box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.2);
+        }
+
+        textarea.form-control { resize: vertical; min-height: 100px; }
+
+        /* --- SERVICES SECTION --- */
+        .services { background-color: var(--primary-dark); }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: var(--primary-charcoal);
+            border-radius: 4px;
             overflow: hidden;
+            transition: var(--transition);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
-        .service-img-container img {
-            transition: transform 0.5s ease;
+
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-hover);
         }
-        .service-card:hover .service-img-container img {
-            transform: scale(1.1);
+
+        .service-img {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .service-img::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.5));
+            pointer-events: none;
+        }
+
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .service-card:hover .service-img img { transform: scale(1.15); }
+
+        .service-content {
+            padding: 2rem;
+            position: relative;
+            z-index: 2;
+            background: var(--primary-charcoal);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-icon {
+            position: absolute;
+            top: -25px;
+            right: 20px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: var(--white);
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            transform: rotate(360deg) scale(1.1);
+        }
+
+        .service-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .service-link {
+            color: var(--accent-gold);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: auto;
+            transition: var(--transition);
+        }
+
+        .service-link i { transition: transform 0.3s; }
+        .service-link:hover { color: var(--white); }
+        .service-link:hover i { transform: translateX(8px); }
+
+        /* --- ABOUT SECTION --- */
+        .about {
+            background-color: #222;
+            position: relative;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1.5rem; }
+        .about-text p { color: var(--text-gray); margin-bottom: 1.5rem; }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            background: rgba(255,255,255,0.03);
+            padding: 1.5rem;
+            border-radius: 4px;
+            text-align: center;
+            transition: var(--transition);
+            border: 1px solid transparent;
+        }
+
+        .stat-item:hover {
+            border-color: var(--accent-gold);
+            transform: translateY(-5px);
+        }
+
+        .stat-item h4 {
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; margin: 0; }
+
+        .about-image {
+            position: relative;
+        }
+
+        .about-image img {
+            border-radius: 4px;
+            box-shadow: var(--shadow-soft);
+            width: 100%;
+        }
+
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            width: 100px;
+            height: 100px;
+            border-top: 3px solid var(--accent-gold);
+            border-left: 3px solid var(--accent-gold);
+            z-index: 1;
+        }
+
+        /* Team Section */
+        .team-section {
+            margin-top: 4rem;
         }
         
-        /* Mobile submenu */
-        .submenu {
-            max-height: 0;
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .team-card {
+            background: var(--primary-charcoal);
+            border-radius: 4px;
             overflow: hidden;
-            transition: max-height 0.3s ease-out;
+            text-align: center;
+            transition: var(--transition);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
-        .submenu.open {
-            max-height: 300px; /* enough for content */
+
+        .team-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
+
+        .team-img {
+            height: 300px;
+            overflow: hidden;
+            width: 100%;
         }
-        /* Focus styles */
-        *:focus-visible {
-            outline: 2px solid #f97316;
-            outline-offset: 2px;
+
+        .team-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+            transition: transform 0.6s;
+        }
+
+        .team-card:hover .team-img img { transform: scale(1.05); }
+
+        .team-info { padding: 1.5rem; }
+        .team-info h4 { font-size: 1.2rem; margin-bottom: 0.5rem; font-family: 'Manrope', sans-serif; }
+        .team-info p { color: var(--accent-gold); font-size: 0.9rem; }
+
+        /* --- PROJECTS SECTION --- */
+        .projects { background-color: var(--primary-dark); }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 3rem;
+        }
+
+        .project-card {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .project-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s ease;
+        }
+
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            opacity: 0;
+            transition: var(--transition);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .project-card:hover .project-overlay,
+        .project-card:focus-within .project-overlay { opacity: 1; }
+        .project-card:hover img,
+        .project-card:focus-within img { transform: scale(1.15); }
+
+        .project-overlay h3 { font-size: 1.5rem; margin-bottom: 0.5rem; transform: translateY(20px); transition: 0.4s; }
+        .project-overlay p { color: var(--accent-gold); transform: translateY(20px); transition: 0.4s 0.1s; }
+
+        .project-card:hover .project-overlay h3,
+        .project-card:hover .project-overlay p,
+        .project-card:focus-within .project-overlay h3,
+        .project-card:focus-within .project-overlay p { transform: translateY(0); }
+
+        /* --- SERVICE AREAS --- */
+        .service-areas {
+            background: linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)), url('https://image.qwenlm.ai/public_source/228bb3ef-22ca-46a5-84f5-c925139a8977/17b388ce8-2e91-426a-bef5-be78ad36f18a.png');
+            background-size: cover;
+            background-attachment: fixed;
+            text-align: center;
+        }
+
+        .areas-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .area-tag {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(5px);
+            padding: 0.8rem 1.8rem;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            transition: var(--transition);
+            cursor: default;
+            font-weight: 500;
+        }
+
+        .area-tag:hover {
+            background: var(--gradient-gold);
+            border-color: var(--accent-gold);
+            color: var(--white);
+            transform: scale(1.1) translateY(-2px);
+            box-shadow: 0 5px 15px rgba(197, 160, 89, 0.3);
+        }
+
+        /* --- CONTACT SECTION --- */
+        .contact { background-color: #222; }
+
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-top: 3rem;
+        }
+
+        .contact-info-box {
+            background: var(--primary-charcoal);
+            padding: 3rem;
+            border-radius: 4px;
+            height: 100%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .info-item {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+            align-items: flex-start;
+            transition: var(--transition);
+        }
+
+        .info-item:hover {
+            transform: translateX(8px);
+        }
+
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            background: rgba(197, 160, 89, 0.1);
+            color: var(--accent-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            flex-shrink: 0;
+            transition: var(--transition);
+        }
+
+        .info-item:hover .info-icon {
+            background: var(--gradient-gold);
+            color: var(--white);
+            transform: scale(1.1);
+        }
+
+        .info-content h4 { font-size: 1.1rem; margin-bottom: 0.5rem; font-family: 'Manrope', sans-serif; }
+        .info-content p { color: var(--text-gray); }
+
+        /* --- BACK TO TOP BUTTON --- */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--gradient-gold);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 20px rgba(197,160,89,0.4);
+            cursor: pointer;
+            transition: var(--transition);
+            opacity: 0;
+            visibility: hidden;
+            z-index: 999;
+            border: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(197,160,89,0.6);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background-color: #111;
+            padding-top: 5rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-brand p {
+            color: var(--text-gray);
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            max-width: 300px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            font-family: 'Manrope', sans-serif;
+            color: var(--white);
+        }
+
+        .footer-links li { margin-bottom: 0.8rem; }
+        .footer-links a { color: var(--text-gray); font-size: 0.9rem; position: relative; padding-left: 0; }
+        .footer-links a::before {
+            content: '›';
+            position: absolute;
+            left: -10px;
+            opacity: 0;
+            transition: 0.3s;
+            color: var(--accent-gold);
+        }
+        .footer-links a:hover,
+        .footer-links a:focus-visible { color: var(--accent-gold); padding-left: 15px; }
+        .footer-links a:hover::before,
+        .footer-links a:focus-visible::before { opacity: 1; left: 0; }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background: rgba(255,255,255,0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: var(--white);
+            transition: var(--transition);
+        }
+
+        .social-icon:hover,
+        .social-icon:focus-visible {
+            background: var(--gradient-gold);
+            transform: translateY(-3px) scale(1.1);
+            outline: none;
+        }
+
+        .footer-bottom {
+            background: #000;
+            padding: 1.5rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        /* --- RESPONSIVE DESIGN (perfect mobile) --- */
+        @media (max-width: 992px) {
+            .hero {
+                align-items: flex-start; /* content starts at top on mobile */
+            }
+            .hero-content { 
+                grid-template-columns: 1fr; 
+                text-align: center; 
+                gap: 3rem;
+                padding-top: clamp(12rem, 25vh, 16rem); /* massive top clearance */
+                padding-bottom: 3rem;
+            }
+            .hero-text h1 { font-size: clamp(2.2rem, 8vw, 3.2rem); }
+            .hero-text p { margin-left: auto; margin-right: auto; }
+            .hero-buttons { justify-content: center; }
+            .hero-form-wrapper { max-width: 550px; margin: 0 auto; width: 100%; }
+
+            .about-grid, .contact-wrapper { grid-template-columns: 1fr; gap: 3rem; }
+            .footer-grid { grid-template-columns: repeat(2, 1fr); }
+
+            /* Mobile Navigation */
+            .mobile-toggle { display: block; }
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: min(85%, 400px);
+                height: 100vh;
+                background: var(--primary-charcoal);
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 6rem 2rem 2rem;
+                transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: -10px 0 30px rgba(0,0,0,0.5);
+                overflow-y: auto;
+                z-index: 999;
+                display: flex;
+                backdrop-filter: blur(10px);
+            }
+            .nav-menu.active { right: 0; }
+            .nav-item { width: 100%; margin-bottom: 1rem; }
+            .nav-link { font-size: 1.2rem; justify-content: space-between; width: 100%; }
+            .dropdown { 
+                position: static; 
+                opacity: 1; 
+                visibility: visible; 
+                transform: none; 
+                box-shadow: none; 
+                background: rgba(0,0,0,0.2); 
+                border: none; 
+                border-left: 2px solid var(--accent-gold);
+                padding: 0.5rem 0 0.5rem 1rem;
+                display: none;
+                margin-top: 0.5rem;
+                width: 100%;
+            }
+            .nav-item.active .dropdown { display: block; }
+            .dropdown li a { padding: 0.8rem 0; }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content {
+                padding-top: clamp(14rem, 28vh, 18rem); /* extra space for smaller devices */
+            }
+            .top-bar-content { 
+                flex-direction: column; 
+                gap: 0.5rem; 
+            }
+            .contact-info { 
+                justify-content: center;
+            }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+            .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
+            .about-image::before { display: none; }
+            .hero { background-attachment: scroll; }
+            .service-areas { background-attachment: scroll; }
+            .back-to-top { bottom: 20px; right: 20px; }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content {
+                padding-top: clamp(16rem, 32vh, 20rem); /* ensures text never touches top */
+            }
+            .container { padding: 0 1rem; }
+            .hero-form-wrapper { padding: 1.5rem; }
+            .section-padding { padding: 3rem 0; }
+            .btn { width: 100%; justify-content: center; }
+            .hero-buttons { flex-direction: column; width: 100%; }
+            .stats-grid { grid-template-columns: 1fr; text-align: center; }
+            .contact-info-box { padding: 2rem; }
+            .hero-text h1 { font-size: 2rem; }
+        }
+
+        /* Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
     </style>
-    
-    <!-- Schema Markup -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "RoofingContractor",
-      "name": "Gatluak Roof Expert",
-      "telephone": "+17135558742",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "123 Main St",
-        "addressLocality": "Houston",
-        "addressRegion": "TX",
-        "postalCode": "77001",
-        "addressCountry": "US"
-      },
-      "priceRange": "$$"
-    }
-    </script>
 </head>
-<body class="bg-slate-50 text-slate-800 antialiased">
+<body>
 
-    <!-- Top Contact Bar -->
-    <div class="bg-brand-dark text-slate-300 py-2 text-xs md:text-sm border-b border-slate-700 z-50 relative">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <div class="flex space-x-4 md:space-x-6 overflow-x-auto whitespace-nowrap pb-1 md:pb-0 scrollbar-hide">
-                <a href="tel:7135558742" class="hover:text-brand-accent transition-colors flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">
-                    <i class="fas fa-phone-alt text-brand-accent"></i> (713) 555-8742
-                </a>
-                <a href="mailto:info@gatluakroofexpert.com" class="hover:text-brand-accent transition-colors flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">
-                    <i class="fas fa-envelope text-brand-accent"></i> info@gatluakroofexpert.com
-                </a>
-            </div>
-            <div class="hidden md:flex items-center gap-2 pl-4 border-l border-slate-700">
-                <i class="far fa-clock text-brand-accent"></i>
-                <span>Mon - Fri: 8:00 AM - 6:00 PM</span>
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <div class="contact-info">
+                <div class="contact-item"><i class="fas fa-phone-alt"></i><span>(713) 555-0198</span></div>
+                <div class="contact-item"><i class="fas fa-map-marker-alt"></i><span>Houston, Texas</span></div>
             </div>
         </div>
     </div>
 
     <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-40 transition-all duration-300 top-0 pt-2" aria-label="Main navigation">
-        <div class="container mx-auto px-4">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <a href="#" class="text-xl md:text-2xl font-bold text-white tracking-tight flex items-center gap-2 group focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">
-                    <div class="w-8 h-8 bg-brand-accent rounded flex items-center justify-center text-white transform group-hover:rotate-12 transition-transform shadow-lg shadow-orange-500/50">
-                        <i class="fas fa-house-chimney"></i>
-                    </div>
-                    Gatluak<span class="text-brand-accent">Roof</span>Expert
-                </a>
-
-                <!-- Desktop Menu -->
-                <div class="hidden lg:flex items-center space-x-6 xl:space-x-8">
-                    <a href="#home" class="text-slate-300 hover:text-white font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">Home</a>
-                    
-                    <!-- Services Dropdown -->
-                    <div class="group relative">
-                        <button class="text-slate-300 hover:text-white font-medium transition-colors flex items-center gap-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded" aria-expanded="false" aria-haspopup="true">
-                            Services <i class="fas fa-chevron-down text-xs"></i>
-                        </button>
-                        <div class="dropdown-menu absolute left-0 mt-4 w-64 bg-white rounded-lg shadow-xl py-2 border border-slate-100" role="menu">
-                            <a href="#services" class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-brand-accent transition-colors border-b border-slate-50" role="menuitem">Roof Installation</a>
-                            <a href="#services" class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-brand-accent transition-colors border-b border-slate-50" role="menuitem">Roof Replacement</a>
-                            <a href="#services" class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-brand-accent transition-colors border-b border-slate-50" role="menuitem">Storm Damage Repair</a>
-                            <a href="#services" class="block px-4 py-3 text-sm text-slate-700 hover:bg-slate-50 hover:text-brand-accent transition-colors" role="menuitem">Emergency Services</a>
-                        </div>
-                    </div>
-
-                    <a href="#gallery" class="text-slate-300 hover:text-white font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">Gallery</a>
-                    <a href="#areas" class="text-slate-300 hover:text-white font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">Service Areas</a>
-                    <a href="#contact" class="text-slate-300 hover:text-white font-medium transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">Contact</a>
-                    
-                    <a href="#contact" class="bg-brand-accent hover:bg-brand-accentHover text-white px-6 py-2.5 rounded font-semibold transition-all transform hover:scale-105 shadow-lg shadow-orange-500/30 whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
-                        Get a Quote
-                    </a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="lg:hidden text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded p-2" aria-expanded="false" aria-label="Toggle navigation menu">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
-            </div>
-        </div>
-
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden lg:hidden bg-brand-dark border-t border-slate-800 absolute w-full shadow-2xl">
-            <div class="px-4 pt-2 pb-6 space-y-2">
-                <a href="#home" class="block px-3 py-3 text-slate-300 hover:text-white hover:bg-slate-800 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">Home</a>
-                
-                <!-- Mobile Services with submenu -->
-                <div>
-                    <button id="mobile-services-btn" class="w-full text-left px-3 py-3 text-slate-300 hover:text-white hover:bg-slate-800 rounded-md flex items-center justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" aria-expanded="false">
-                        Services <i class="fas fa-chevron-down text-sm transition-transform"></i>
-                    </button>
-                    <div id="mobile-services-submenu" class="submenu pl-6 space-y-2">
-                        <a href="#services" class="block px-3 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800 rounded-md">Roof Installation</a>
-                        <a href="#services" class="block px-3 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800 rounded-md">Roof Replacement</a>
-                        <a href="#services" class="block px-3 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800 rounded-md">Storm Damage Repair</a>
-                        <a href="#services" class="block px-3 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800 rounded-md">Emergency Services</a>
-                    </div>
-                </div>
-                
-                <!-- Mobile Service Areas with submenu -->
-                <div>
-                    <button id="mobile-areas-btn" class="w-full text-left px-3 py-3 text-slate-300 hover:text-white hover:bg-slate-800 rounded-md flex items-center justify-between focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" aria-expanded="false">
-                        Service Areas <i class="fas fa-chevron-down text-sm transition-transform"></i>
-                    </button>
-                    <div id="mobile-areas-submenu" class="submenu pl-6 space-y-2">
-                        <a href="#areas" class="block px-3 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800 rounded-md">Houston</a>
-                        <a href="#areas" class="block px-3 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800 rounded-md">Katy</a>
-                        <a href="#areas" class="block px-3 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800 rounded-md">Sugar Land</a>
-                        <a href="#areas" class="block px-3 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800 rounded-md">Pearland</a>
-                        <a href="#areas" class="block px-3 py-2 text-sm text-slate-400 hover:text-white hover:bg-slate-800 rounded-md">The Woodlands</a>
-                        <!-- more cities can be added -->
-                    </div>
-                </div>
-
-                <a href="#gallery" class="block px-3 py-3 text-slate-300 hover:text-white hover:bg-slate-800 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">Gallery</a>
-                <a href="#contact" class="block px-3 py-3 text-slate-300 hover:text-white hover:bg-slate-800 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">Contact</a>
-                <a href="#contact" class="block mt-4 text-center bg-brand-accent text-white px-3 py-3 rounded-md font-bold focus:outline-none focus-visible:ring-2 focus-visible:ring-white">Get a Quote</a>
-            </div>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo" aria-label="James Roofing home"><i class="fas fa-home"></i> James Roofing</a>
+            <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu" aria-expanded="false"><i class="fas fa-bars"></i></button>
+            <ul class="nav-menu" id="nav-menu">
+                <li class="nav-item"><a href="#home" class="nav-link">Home</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+                <li class="nav-item has-dropdown">
+                    <a href="#services" class="nav-link" aria-haspopup="true">Services <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown" aria-label="submenu">
+                        <li><a href="#">Roof Installation</a></li>
+                        <li><a href="#">Roof Replacement</a></li>
+                        <li><a href="#">Storm Damage</a></li>
+                        <li><a href="#">Commercial Roofing</a></li>
+                        <li><a href="#">Gutter Installation</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                <li class="nav-item has-dropdown">
+                    <a href="#areas" class="nav-link" aria-haspopup="true">Service Areas <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown" aria-label="submenu">
+                        <li><a href="#">Houston</a></li>
+                        <li><a href="#">Katy</a></li>
+                        <li><a href="#">Sugar Land</a></li>
+                        <li><a href="#">The Woodlands</a></li>
+                        <li><a href="#">Pearland</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                <li class="nav-item"><a href="#contact" class="btn" style="width:100%;">Get Quote</a></li>
+            </ul>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="relative h-screen min-h-[700px] flex items-center bg-hero-pattern bg-cover bg-center bg-no-repeat bg-fixed" aria-label="Hero">
-        <div class="container mx-auto px-4 pt-20">
-            <div class="grid lg:grid-cols-2 gap-12 items-center">
-                
-                <!-- Hero Text -->
-                <div class="text-white space-y-6">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 border border-brand-accent/50 rounded-full bg-brand-accent/10 backdrop-blur-sm text-brand-accent text-xs md:text-sm font-semibold mb-2 animate-pulse">
-                        <span class="w-2 h-2 rounded-full bg-brand-accent"></span> #1 Roofing Contractor in Houston
-                    </div>
-                    <h1 class="text-4xl md:text-5xl lg:text-7xl font-bold leading-tight">
-                        <span id="typing-text" class="text-brand-accent"></span><span class="cursor">&nbsp;</span>
-                    </h1>
-                    <p class="text-lg md:text-xl text-slate-200 max-w-lg leading-relaxed">
-                        Protecting Houston homes with premium roofing solutions. Expert craftsmanship, durable materials, and guaranteed satisfaction.
-                    </p>
-                    <div class="flex flex-wrap gap-4 pt-4">
-                        <div class="flex items-center gap-2 text-slate-300 bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
-                            <i class="fas fa-check-circle text-brand-accent"></i> Licensed & Insured
-                        </div>
-                        <div class="flex items-center gap-2 text-slate-300 bg-white/10 px-4 py-2 rounded-lg backdrop-blur-sm">
-                            <i class="fas fa-check-circle text-brand-accent"></i> 24/7 Emergency
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Glassmorphism Form -->
-                <div class="hidden lg:block">
-                    <div class="glass rounded-2xl p-8 max-w-md ml-auto shadow-2xl border-t border-white/20">
-                        <h2 class="text-2xl font-bold text-white mb-2">Get Your Free Quote</h2>
-                        <p class="text-slate-300 mb-6 text-sm">Fill out the form below and we'll get back to you within 24 hours.</p>
-                        
-                        <form class="space-y-4">
-                            <div>
-                                <label for="hero-name" class="sr-only">Full Name</label>
-                                <input type="text" id="hero-name" placeholder="Full Name" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:border-brand-accent focus:bg-white/20 transition-all">
-                            </div>
-                            <div class="grid grid-cols-2 gap-4">
-                                <div>
-                                    <label for="hero-email" class="sr-only">Email</label>
-                                    <input type="email" id="hero-email" placeholder="Email" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:border-brand-accent focus:bg-white/20 transition-all">
-                                </div>
-                                <div>
-                                    <label for="hero-phone" class="sr-only">Phone</label>
-                                    <input type="tel" id="hero-phone" placeholder="Phone" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:border-brand-accent focus:bg-white/20 transition-all">
-                                </div>
-                            </div>
-                            <div>
-                                <label for="hero-service" class="sr-only">Service Needed</label>
-                                <select id="hero-service" class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-brand-accent focus:bg-white/20 transition-all appearance-none">
-                                    <option value="" class="text-slate-800">Service Needed</option>
-                                    <option value="repair" class="text-slate-800">Roof Repair</option>
-                                    <option value="replacement" class="text-slate-800">Roof Replacement</option>
-                                    <option value="inspection" class="text-slate-800">Inspection</option>
-                                    <option value="storm" class="text-slate-800">Storm Damage</option>
-                                </select>
-                            </div>
-                            <div>
-                                <label for="hero-message" class="sr-only">Briefly describe your issue...</label>
-                                <textarea id="hero-message" rows="3" placeholder="Briefly describe your issue..." class="w-full bg-white/10 border border-white/20 rounded-lg px-4 py-3 text-white placeholder-slate-400 focus:outline-none focus:border-brand-accent focus:bg-white/20 transition-all"></textarea>
-                            </div>
-                            
-                            <button type="button" class="w-full bg-brand-accent hover:bg-brand-accentHover text-white font-bold py-4 rounded-lg shadow-lg shadow-orange-500/30 transition-all transform hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
-                                Request Free Quote
-                            </button>
-                        </form>
-                    </div>
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <div class="hero-text fade-in">
+                <h1>
+                    <span class="typing-container"></span><span class="cursor"></span><br>
+                    Excellence in Every Shingle
+                </h1>
+                <p>Reliable residential and commercial roofing services across Houston, Texas. We protect your biggest investment with premium materials and expert craftsmanship.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn">Get a Quote</a>
+                    <a href="#projects" class="btn btn-outline">View Our Work</a>
                 </div>
             </div>
-        </div>
-        
-        <!-- Scroll Down Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <a href="#about" class="text-white/50 hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded-full" aria-label="Scroll down">
-                <i class="fas fa-chevron-down text-2xl"></i>
-            </a>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 bg-white" aria-labelledby="about-heading">
-        <div class="container mx-auto px-4">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="relative order-2 lg:order-1">
-                    <div class="absolute -top-4 -left-4 w-24 h-24 bg-brand-accent/20 rounded-full blur-xl"></div>
-                    <img src="https://image.qwenlm.ai/public_source/3c007ea5-36c0-4050-a063-0c7d553b150c/17c16c123-8b03-4931-9d3f-76fea50e217e.png" alt="Gatluak Roof Expert team working on a residential roof" class="rounded-xl shadow-2xl relative z-10 w-full object-cover h-[400px] md:h-[500px]" loading="lazy">
-                    <div class="absolute -bottom-6 -right-6 bg-brand-dark text-white p-6 rounded-lg shadow-xl z-20 hidden md:block">
-                        <div class="text-4xl font-bold text-brand-accent mb-1">15+</div>
-                        <div class="text-sm font-medium">Years Experience</div>
-                    </div>
+            
+            <div class="hero-form-wrapper fade-in">
+                <div class="form-header">
+                    <h3>Request a Quote</h3>
+                    <p>Fast, free estimates for your roofing needs.</p>
                 </div>
-                <div class="order-1 lg:order-2">
-                    <h2 id="about-heading" class="text-brand-accent font-bold uppercase tracking-wider mb-2">About Us</h2>
-                    <h3 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">Houston's Most Trusted Roofing Experts</h3>
-                    <p class="text-slate-600 mb-6 leading-relaxed">
-                        At Gatluak Roof Expert, we understand that your roof is your home's first line of defense. Located in the heart of Houston, Texas, we specialize in high-quality residential and commercial roofing solutions tailored to withstand the unique Texas climate.
-                    </p>
-                    <p class="text-slate-600 mb-8 leading-relaxed">
-                        From minor repairs to complete storm damage restoration, our team of certified professionals delivers exceptional craftsmanship, transparent pricing, and unmatched customer service. We don't just fix roofs; we build trust.
-                    </p>
-                    
-                    <div class="grid grid-cols-2 gap-6 mb-8">
-                        <div class="flex items-start gap-3">
-                            <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-brand-accent flex-shrink-0">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-brand-dark">Warranty Guaranteed</h4>
-                                <p class="text-sm text-slate-500">Comprehensive coverage on all work.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <div class="w-10 h-10 rounded-full bg-orange-100 flex items-center justify-center text-brand-accent flex-shrink-0">
-                                <i class="fas fa-clock"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-brand-dark">On-Time Service</h4>
-                                <p class="text-sm text-slate-500">We respect your time and schedule.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <a href="#contact" class="inline-flex items-center gap-2 text-brand-accent font-bold hover:gap-3 transition-all focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">
-                        Learn More About Us <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
+                <form id="quote-form">
+                    <div class="form-group"><input type="text" class="form-control" placeholder="Full Name" name="name" required></div>
+                    <div class="form-group"><input type="tel" class="form-control" placeholder="Phone Number" name="phone" required></div>
+                    <div class="form-group"><input type="email" class="form-control" placeholder="Email Address" name="email" required></div>
+                    <div class="form-group"><textarea class="form-control" placeholder="Tell us about your project..." name="message" rows="4"></textarea></div>
+                    <button type="submit" class="btn" style="width:100%;">Submit Request</button>
+                </form>
             </div>
         </div>
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="py-20 bg-slate-50" aria-labelledby="services-heading">
-        <div class="container mx-auto px-4">
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <h2 id="services-heading" class="text-brand-accent font-bold uppercase tracking-wider mb-2">Our Services</h2>
-                <h3 class="text-3xl md:text-4xl font-bold text-brand-dark mb-4">Premium Roofing Solutions</h3>
-                <p class="text-slate-600">We offer a full range of roofing services for residential and commercial properties in the Greater Houston area.</p>
+    <section class="section-padding services" id="services">
+        <div class="container">
+            <div class="text-center fade-in">
+                <span class="section-subtitle">Our Expertise</span>
+                <h2 class="section-title">Premium Roofing Services</h2>
             </div>
-
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Service Card 1 -->
-                <div class="service-card bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 overflow-hidden group">
-                    <div class="service-img-container h-48 w-full relative">
-                        <img src="https://image.qwenlm.ai/public_source/3c007ea5-36c0-4050-a063-0c7d553b150c/126237e29-ae0e-43da-aaa6-a7ff564c6111.png" alt="Roof repair technician fixing shingles" class="w-full h-full object-cover" loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <i class="fas fa-hammer text-2xl mb-2 text-brand-accent"></i>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-brand-dark mb-3">Roof Repair</h3>
-                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">Fix leaks, missing shingles, and storm damage quickly to prevent further structural issues to your home.</p>
-                        <a href="#contact" class="text-brand-accent font-semibold text-sm hover:underline flex items-center gap-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">Get Repair Quote <i class="fas fa-arrow-right text-xs"></i></a>
-                    </div>
+            <div class="services-grid">
+                <!-- Service 1 -->
+                <div class="service-card fade-in">
+                    <div class="service-img"><img src="https://image.qwenlm.ai/public_source/228bb3ef-22ca-46a5-84f5-c925139a8977/112d7f7a3-736d-4686-b265-4be56c11c6df.png" alt="Asphalt shingle roofing installation on a residential home"></div>
+                    <div class="service-content"><div class="service-icon"><i class="fas fa-home"></i></div><h3>Shingle Roofing</h3><p>High-quality asphalt shingle installation and replacement designed to withstand Houston's harsh weather conditions.</p><a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
                 </div>
-
-                <!-- Service Card 2 -->
-                <div class="service-card bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 overflow-hidden group">
-                    <div class="service-img-container h-48 w-full relative">
-                        <img src="https://image.qwenlm.ai/public_source/3c007ea5-36c0-4050-a063-0c7d553b150c/1f520b27b-8ff3-4638-9dc7-1e754a79dcbf.png" alt="New roof installation on a house" class="w-full h-full object-cover" loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <i class="fas fa-home text-2xl mb-2 text-brand-accent"></i>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-brand-dark mb-3">Roof Replacement</h3>
-                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">Complete roof tear-off and replacement using high-quality materials and modern installation techniques.</p>
-                        <a href="#contact" class="text-brand-accent font-semibold text-sm hover:underline flex items-center gap-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">Get Replacement Quote <i class="fas fa-arrow-right text-xs"></i></a>
-                    </div>
+                <!-- Service 2 -->
+                <div class="service-card fade-in">
+                    <div class="service-img"><img src="https://image.qwenlm.ai/public_source/228bb3ef-22ca-46a5-84f5-c925139a8977/1a3c9f056-2465-4ee3-8139-c9514e05e0da.png" alt="Standing seam metal roofing on modern house"></div>
+                    <div class="service-content"><div class="service-icon"><i class="fas fa-layer-group"></i></div><h3>Metal Roofing</h3><p>Durable, energy-efficient standing seam metal roofs that offer modern aesthetics and long-term protection.</p><a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
                 </div>
-
-                <!-- Service Card 3 -->
-                <div class="service-card bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 overflow-hidden group">
-                    <div class="service-img-container h-48 w-full relative">
-                        <img src="https://image.qwenlm.ai/public_source/3c007ea5-36c0-4050-a063-0c7d553b150c/1f1857fa7-999d-4e59-843c-afa22987c5fd.png" alt="Storm damage on a roof after hail" class="w-full h-full object-cover" loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <i class="fas fa-cloud-showers-heavy text-2xl mb-2 text-brand-accent"></i>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-brand-dark mb-3">Storm Damage</h3>
-                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">Expert assessment and insurance claim assistance for wind, hail, and hurricane damage.</p>
-                        <a href="#contact" class="text-brand-accent font-semibold text-sm hover:underline flex items-center gap-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">Emergency Repair <i class="fas fa-arrow-right text-xs"></i></a>
-                    </div>
+                <!-- Service 3 -->
+                <div class="service-card fade-in">
+                    <div class="service-img"><img src="https://image.qwenlm.ai/public_source/228bb3ef-22ca-46a5-84f5-c925139a8977/137811c98-2a63-4be0-b567-d4071a3db876.png" alt="Commercial flat roof with TPO membrane"></div>
+                    <div class="service-content"><div class="service-icon"><i class="fas fa-building"></i></div><h3>Commercial Roofing</h3><p>Comprehensive flat roofing solutions for businesses, including TPO, EPDM, and modified bitumen systems.</p><a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
                 </div>
-
-                <!-- Service Card 4 -->
-                <div class="service-card bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 overflow-hidden group">
-                    <div class="service-img-container h-48 w-full relative">
-                        <img src="https://image.qwenlm.ai/public_source/3c007ea5-36c0-4050-a063-0c7d553b150c/17c16c123-8b03-4931-9d3f-76fea50e217e.png" alt="Architectural shingle roof installation" class="w-full h-full object-cover" loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <i class="fas fa-layer-group text-2xl mb-2 text-brand-accent"></i>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-brand-dark mb-3">Shingle Roofing</h3>
-                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">Asphalt and architectural shingles offering durability, weather resistance, and aesthetic appeal.</p>
-                        <a href="#contact" class="text-brand-accent font-semibold text-sm hover:underline flex items-center gap-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">View Options <i class="fas fa-arrow-right text-xs"></i></a>
-                    </div>
+                <!-- Service 4 -->
+                <div class="service-card fade-in">
+                    <div class="service-img"><img src="https://image.qwenlm.ai/public_source/228bb3ef-22ca-46a5-84f5-c925139a8977/17b388ce8-2e91-426a-bef5-be78ad36f18a.png" alt="Roofer repairing damaged shingles"></div>
+                    <div class="service-content"><div class="service-icon"><i class="fas fa-tools"></i></div><h3>Roof Repair</h3><p>Expert leak detection and repair services to extend the life of your existing roof and prevent water damage.</p><a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
                 </div>
-
-                <!-- Service Card 5 -->
-                <div class="service-card bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 overflow-hidden group">
-                    <div class="service-img-container h-48 w-full relative">
-                        <img src="https://image.qwenlm.ai/public_source/3c007ea5-36c0-4050-a063-0c7d553b150c/126237e29-ae0e-43da-aaa6-a7ff564c6111.png" alt="Metal roofing panels being installed" class="w-full h-full object-cover" loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <i class="fas fa-industry text-2xl mb-2 text-brand-accent"></i>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-brand-dark mb-3">Metal Roofing</h3>
-                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">Long-lasting, energy-efficient metal roofing systems perfect for modern homes and businesses.</p>
-                        <a href="#contact" class="text-brand-accent font-semibold text-sm hover:underline flex items-center gap-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">Learn More <i class="fas fa-arrow-right text-xs"></i></a>
-                    </div>
+                <!-- Service 5 -->
+                <div class="service-card fade-in">
+                    <div class="service-img"><img src="https://image.qwenlm.ai/public_source/228bb3ef-22ca-46a5-84f5-c925139a8977/1ea40deca-b86b-43d3-98ff-7f931ca18c03.png" alt="Roof with storm damage and missing shingles"></div>
+                    <div class="service-content"><div class="service-icon"><i class="fas fa-cloud-showers-heavy"></i></div><h3>Storm Damage</h3><p>Emergency response and insurance claim assistance for roofs damaged by hail, wind, and severe storms.</p><a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
                 </div>
-
-                <!-- Service Card 6 -->
-                <div class="service-card bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-slate-100 overflow-hidden group">
-                    <div class="service-img-container h-48 w-full relative">
-                        <img src="https://image.qwenlm.ai/public_source/3c007ea5-36c0-4050-a063-0c7d553b150c/1f520b27b-8ff3-4638-9dc7-1e754a79dcbf.png" alt="Roof inspection with drone" class="w-full h-full object-cover" loading="lazy">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-60"></div>
-                        <div class="absolute bottom-4 left-4 text-white">
-                            <i class="fas fa-search text-2xl mb-2 text-brand-accent"></i>
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-brand-dark mb-3">Roof Inspection</h3>
-                        <p class="text-slate-600 mb-4 text-sm leading-relaxed">Comprehensive inspections for real estate transactions, insurance claims, or general maintenance.</p>
-                        <a href="#contact" class="text-brand-accent font-semibold text-sm hover:underline flex items-center gap-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">Schedule Inspection <i class="fas fa-arrow-right text-xs"></i></a>
-                    </div>
+                <!-- Service 6 -->
+                <div class="service-card fade-in">
+                    <div class="service-img"><img src="https://image.qwenlm.ai/public_source/228bb3ef-22ca-46a5-84f5-c925139a8977/1c5f50fa3-9718-42d3-8f61-9acd81dd8cb1.png" alt="Roof inspector checking shingles"></div>
+                    <div class="service-content"><div class="service-icon"><i class="fas fa-clipboard-check"></i></div><h3>Roof Inspections</h3><p>Thorough annual inspections to identify potential issues before they become costly repairs.</p><a href="#" class="service-link">Learn More <i class="fas fa-arrow-right"></i></a></div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-20 bg-brand-dark text-white" aria-labelledby="gallery-heading">
-        <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
-                <div class="max-w-2xl">
-                    <h2 id="gallery-heading" class="text-brand-accent font-bold uppercase tracking-wider mb-2">Our Portfolio</h2>
-                    <h3 class="text-3xl md:text-4xl font-bold mb-4">Recent Projects</h3>
-                    <p class="text-slate-400">See the quality of our workmanship in our latest roofing installations and repairs.</p>
-                </div>
-                <a href="#contact" class="hidden md:inline-block bg-white/10 hover:bg-brand-accent text-white px-6 py-3 rounded-lg transition-colors font-medium mt-4 md:mt-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
-                    Start Your Project
-                </a>
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-                <!-- Gallery Item 1 -->
-                <div class="group relative overflow-hidden rounded-xl aspect-[4/3] cursor-pointer" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox(this)" aria-label="View full size: Slate Roof Installation">
-                    <img src="https://image.qwenlm.ai/public_source/3c007ea5-36c0-4050-a063-0c7d553b150c/126237e29-ae0e-43da-aaa6-a7ff564c6111.png" alt="Slate Roof Installation on a residential home" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <div>
-                            <h4 class="font-bold text-lg">Slate Roof Installation</h4>
-                            <p class="text-sm text-slate-300">Residential</p>
-                        </div>
+    <!-- About Section -->
+    <section class="section-padding about" id="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text fade-in">
+                    <span class="section-subtitle">About James Roofing</span>
+                    <h2>Houston's Most Trusted Roofing Contractors</h2>
+                    <p>With over 20 years of experience serving the Greater Houston area, James Roofing has established a reputation for excellence, integrity, and superior craftsmanship. We don't just install roofs; we build peace of mind.</p>
+                    <p>Our team of certified professionals uses only the highest quality materials to ensure your home or business is protected against the elements. From minor repairs to complete roof replacements, we treat every project with the same level of dedication.</p>
+                    <div class="stats-grid">
+                        <div class="stat-item"><h4>20+</h4><p>Years Experience</p></div>
+                        <div class="stat-item"><h4>5k+</h4><p>Projects Completed</p></div>
+                        <div class="stat-item"><h4>100%</h4><p>Satisfaction Guarantee</p></div>
+                        <div class="stat-item"><h4>24/7</h4><p>Emergency Service</p></div>
                     </div>
                 </div>
-
-                <!-- Gallery Item 2 -->
-                <div class="group relative overflow-hidden rounded-xl aspect-[4/3] cursor-pointer" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox(this)" aria-label="View full size: Standing Seam Metal">
-                    <img src="https://image.qwenlm.ai/public_source/3c007ea5-36c0-4050-a063-0c7d553b150c/1f520b27b-8ff3-4638-9dc7-1e754a79dcbf.png" alt="Standing seam metal roof on modern home" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <div>
-                            <h4 class="font-bold text-lg">Standing Seam Metal</h4>
-                            <p class="text-sm text-slate-300">Modern Home</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 3 -->
-                <div class="group relative overflow-hidden rounded-xl aspect-[4/3] cursor-pointer" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox(this)" aria-label="View full size: Storm Damage Repair">
-                    <img src="https://image.qwenlm.ai/public_source/3c007ea5-36c0-4050-a063-0c7d553b150c/17c16c123-8b03-4931-9d3f-76fea50e217e.png" alt="After storm damage repair on a suburban house" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <div>
-                            <h4 class="font-bold text-lg">Storm Damage Repair</h4>
-                            <p class="text-sm text-slate-300">Suburban Houston</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Gallery Item 4 -->
-                <div class="group relative overflow-hidden rounded-xl aspect-[4/3] cursor-pointer" onclick="openLightbox(this)" role="button" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' ') openLightbox(this)" aria-label="View full size: Commercial Flat Roof">
-                    <img src="https://image.qwenlm.ai/public_source/3c007ea5-36c0-4050-a063-0c7d553b150c/1f1857fa7-999d-4e59-843c-afa22987c5fd.png" alt="Commercial flat roof installation on office complex" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" loading="lazy">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
-                        <div>
-                            <h4 class="font-bold text-lg">Commercial Flat Roof</h4>
-                            <p class="text-sm text-slate-300">Office Complex</p>
-                        </div>
-                    </div>
+                <div class="about-image fade-in">
+                    <img src="https://image.qwenlm.ai/public_source/228bb3ef-22ca-46a5-84f5-c925139a8977/1e5fb29d5-9ffc-402c-90c7-50bdf27e4dc5.png" alt="James Roofing project manager on site">
                 </div>
             </div>
-            
-            <div class="mt-8 text-center md:hidden">
-                <a href="#contact" class="inline-block bg-white/10 hover:bg-brand-accent text-white px-6 py-3 rounded-lg transition-colors font-medium w-full focus:outline-none focus-visible:ring-2 focus-visible:ring-white">
-                    Start Your Project
-                </a>
+            <div class="team-section fade-in">
+                <div class="text-center" style="margin-bottom:2rem;"><h3>Meet Our Team</h3></div>
+                <div class="team-grid">
+                    <div class="team-card"><div class="team-img"><img src="https://image.qwenlm.ai/public_source/228bb3ef-22ca-46a5-84f5-c925139a8977/1c5f50fa3-9718-42d3-8f61-9acd81dd8cb1.png" alt="James Miller, Founder and CEO"></div><div class="team-info"><h4>James Miller</h4><p>Founder & CEO</p></div></div>
+                    <div class="team-card"><div class="team-img"><img src="https://image.qwenlm.ai/public_source/228bb3ef-22ca-46a5-84f5-c925139a8977/1e5fb29d5-9ffc-402c-90c7-50bdf27e4dc5.png" alt="David Chen, Lead Project Manager"></div><div class="team-info"><h4>David Chen</h4><p>Lead Project Manager</p></div></div>
+                    <div class="team-card"><div class="team-img"><img src="https://image.qwenlm.ai/public_source/228bb3ef-22ca-46a5-84f5-c925139a8977/137811c98-2a63-4be0-b567-d4071a3db876.png" alt="Robert Johnson, Safety Director"></div><div class="team-info"><h4>Robert Johnson</h4><p>Safety Director</p></div></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Service Areas Section -->
-    <section id="areas" class="py-20 bg-slate-50" aria-labelledby="areas-heading">
-        <div class="container mx-auto px-4">
-            <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 border border-slate-100">
-                <div class="text-center mb-10">
-                    <h2 id="areas-heading" class="text-brand-accent font-bold uppercase tracking-wider mb-2">Service Areas</h2>
-                    <h3 class="text-3xl font-bold text-brand-dark">Serving the Greater Houston Area</h3>
-                </div>
-                
-                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-                    <div class="flex items-center gap-2 p-3 rounded-lg hover:bg-slate-50 transition-colors">
-                        <i class="fas fa-map-marker-alt text-brand-accent"></i>
-                        <span class="font-medium text-slate-700">Houston</span>
-                    </div>
-                    <div class="flex items-center gap-2 p-3 rounded-lg hover:bg-slate-50 transition-colors">
-                        <i class="fas fa-map-marker-alt text-brand-accent"></i>
-                        <span class="font-medium text-slate-700">Katy</span>
-                    </div>
-                    <div class="flex items-center gap-2 p-3 rounded-lg hover:bg-slate-50 transition-colors">
-                        <i class="fas fa-map-marker-alt text-brand-accent"></i>
-                        <span class="font-medium text-slate-700">Sugar Land</span>
-                    </div>
-                    <div class="flex items-center gap-2 p-3 rounded-lg hover:bg-slate-50 transition-colors">
-                        <i class="fas fa-map-marker-alt text-brand-accent"></i>
-                        <span class="font-medium text-slate-700">Pearland</span>
-                    </div>
-                    <div class="flex items-center gap-2 p-3 rounded-lg hover:bg-slate-50 transition-colors">
-                        <i class="fas fa-map-marker-alt text-brand-accent"></i>
-                        <span class="font-medium text-slate-700">Pasadena</span>
-                    </div>
-                    <div class="flex items-center gap-2 p-3 rounded-lg hover:bg-slate-50 transition-colors">
-                        <i class="fas fa-map-marker-alt text-brand-accent"></i>
-                        <span class="font-medium text-slate-700">Cypress</span>
-                    </div>
-                    <div class="flex items-center gap-2 p-3 rounded-lg hover:bg-slate-50 transition-colors">
-                        <i class="fas fa-map-marker-alt text-brand-accent"></i>
-                        <span class="font-medium text-slate-700">Spring</span>
-                    </div>
-                    <div class="flex items-center gap-2 p-3 rounded-lg hover:bg-slate-50 transition-colors">
-                        <i class="fas fa-map-marker-alt text-brand-accent"></i>
-                        <span class="font-medium text-slate-700">The Woodlands</span>
-                    </div>
-                    <div class="flex items-center gap-2 p-3 rounded-lg hover:bg-slate-50 transition-colors">
-                        <i class="fas fa-map-marker-alt text-brand-accent"></i>
-                        <span class="font-medium text-slate-700">League City</span>
-                    </div>
-                    <div class="flex items-center gap-2 p-3 rounded-lg hover:bg-slate-50 transition-colors">
-                        <i class="fas fa-map-marker-alt text-brand-accent"></i>
-                        <span class="font-medium text-slate-700">Missouri City</span>
-                    </div>
-                </div>
+    <!-- Projects Section -->
+    <section class="section-padding projects" id="projects">
+        <div class="container">
+            <div class="text-center fade-in"><span class="section-subtitle">Our Portfolio</span><h2 class="section-title">Recent Projects</h2></div>
+            <div class="projects-grid">
+                <div class="project-card fade-in"><img src="https://image.qwenlm.ai/public_source/228bb3ef-22ca-46a5-84f5-c925139a8977/17b388ce8-2e91-426a-bef5-be78ad36f18a.png" alt="Completed roof replacement in The Woodlands"><div class="project-overlay"><h3>The Woodlands Residence</h3><p>Full Roof Replacement</p></div></div>
+                <div class="project-card fade-in"><img src="https://image.qwenlm.ai/public_source/228bb3ef-22ca-46a5-84f5-c925139a8977/1ea40deca-b86b-43d3-98ff-7f931ca18c03.png" alt="Luxury shingle roof installation in Katy"><div class="project-overlay"><h3>Katy Luxury Home</h3><p>Premium Shingle Installation</p></div></div>
+                <div class="project-card fade-in"><img src="https://image.qwenlm.ai/public_source/228bb3ef-22ca-46a5-84f5-c925139a8977/1a3c9f056-2465-4ee3-8139-c9514e05e0da.png" alt="Standing seam metal roof on office complex"><div class="project-overlay"><h3>Modern Office Complex</h3><p>Standing Seam Metal Roof</p></div></div>
+                <div class="project-card fade-in"><img src="https://image.qwenlm.ai/public_source/228bb3ef-22ca-46a5-84f5-c925139a8977/137811c98-2a63-4be0-b567-d4071a3db876.png" alt="Industrial warehouse flat roofing project"><div class="project-overlay"><h3>Industrial Warehouse</h3><p>Commercial Flat Roofing</p></div></div>
+            </div>
+            <div class="text-center" style="margin-top:3rem;"><a href="#" class="btn btn-outline">View All Projects</a></div>
+        </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="section-padding service-areas" id="areas">
+        <div class="container fade-in">
+            <span class="section-subtitle">Where We Work</span>
+            <h2 class="section-title">Serving Greater Houston</h2>
+            <p style="color:#ddd; max-width:600px; margin:1rem auto;">We proudly provide top-tier roofing services to homeowners and businesses throughout the Houston metropolitan area.</p>
+            <div class="areas-list">
+                <span class="area-tag">Houston</span><span class="area-tag">Katy</span><span class="area-tag">Sugar Land</span><span class="area-tag">The Woodlands</span><span class="area-tag">Pearland</span><span class="area-tag">Cypress</span><span class="area-tag">Pasadena</span><span class="area-tag">Spring</span><span class="area-tag">Missouri City</span><span class="area-tag">Baytown</span><span class="area-tag">Memorial</span><span class="area-tag">River Oaks</span>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-white" aria-labelledby="contact-heading">
-        <div class="container mx-auto px-4">
-            <div class="grid lg:grid-cols-2 gap-12">
-                <!-- Contact Info -->
-                <div>
-                    <h2 id="contact-heading" class="text-brand-accent font-bold uppercase tracking-wider mb-2">Contact Us</h2>
-                    <h3 class="text-3xl md:text-4xl font-bold text-brand-dark mb-6">Ready to Protect Your Home?</h3>
-                    <p class="text-slate-600 mb-8">Contact us today for a free estimate. Our team is ready to answer your questions and schedule your inspection.</p>
-                    
-                    <div class="space-y-6">
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-orange-50 rounded-full flex items-center justify-center text-brand-accent flex-shrink-0">
-                                <i class="fas fa-phone-alt text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-brand-dark text-lg">Phone</h4>
-                                <a href="tel:7135558742" class="text-slate-600 hover:text-brand-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">(713) 555-8742</a>
-                                <p class="text-xs text-slate-400 mt-1">Available 24/7 for emergencies</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-orange-50 rounded-full flex items-center justify-center text-brand-accent flex-shrink-0">
-                                <i class="fas fa-envelope text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-brand-dark text-lg">Email</h4>
-                                <a href="mailto:info@gatluakroofexpert.com" class="text-slate-600 hover:text-brand-accent transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">info@gatluakroofexpert.com</a>
-                                <p class="text-xs text-slate-400 mt-1">Response within 24 hours</p>
-                            </div>
-                        </div>
-
-                        <div class="flex items-start gap-4">
-                            <div class="w-12 h-12 bg-orange-50 rounded-full flex items-center justify-center text-brand-accent flex-shrink-0">
-                                <i class="fas fa-map-marked-alt text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-brand-dark text-lg">Location</h4>
-                                <p class="text-slate-600">123 Main St, Houston, TX 77001</p>
-                                <p class="text-xs text-slate-400 mt-1">Serving all of Greater Houston</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Map Embed -->
-                    <div class="mt-8 rounded-xl overflow-hidden shadow-lg h-64 w-full bg-slate-200">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d109889.52654601536!2d-95.46564608203125!3d29.7604267!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8640b8b4488d8501%3A0xca0d02def365053b!2sHouston%2C%20TX!5e0!3m2!1sen!2sus!4v1684345678901!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of Houston area"></iframe>
-                    </div>
+    <section class="section-padding contact" id="contact">
+        <div class="container">
+            <div class="text-center fade-in"><span class="section-subtitle">Get In Touch</span><h2 class="section-title">Contact Us</h2></div>
+            <div class="contact-wrapper">
+                <div class="contact-info-box fade-in">
+                    <div class="info-item"><div class="info-icon"><i class="fas fa-phone-alt"></i></div><div class="info-content"><h4>Phone Number</h4><p>(713) 555-0198</p><p style="font-size:0.8rem;">Available 24/7 for emergencies</p></div></div>
+                    <div class="info-item"><div class="info-icon"><i class="fas fa-envelope"></i></div><div class="info-content"><h4>Email Address</h4><p>info@jamesroofing.com</p><p style="font-size:0.8rem;">Response within 24 hours</p></div></div>
+                    <div class="info-item"><div class="info-icon"><i class="fas fa-map-marked-alt"></i></div><div class="info-content"><h4>Office Location</h4><p>1234 Roofing Blvd, Suite 100<br>Houston, TX 77002</p></div></div>
+                    <div class="info-item"><div class="info-icon"><i class="fas fa-clock"></i></div><div class="info-content"><h4>Business Hours</h4><p>Mon - Fri: 8:00 AM - 6:00 PM<br>Sat: 9:00 AM - 2:00 PM</p></div></div>
                 </div>
-
-                <!-- Contact Form -->
-                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 shadow-lg">
-                    <h3 class="text-2xl font-bold text-brand-dark mb-6">Send a Message</h3>
-                    <form class="space-y-5">
-                        <div class="grid md:grid-cols-2 gap-5">
-                            <div>
-                                <label for="contact-name" class="block text-sm font-medium text-slate-700 mb-1">Name</label>
-                                <input type="text" id="contact-name" class="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-all">
-                            </div>
-                            <div>
-                                <label for="contact-phone" class="block text-sm font-medium text-slate-700 mb-1">Phone</label>
-                                <input type="tel" id="contact-phone" class="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-all">
-                            </div>
-                        </div>
-                        <div>
-                            <label for="contact-email" class="block text-sm font-medium text-slate-700 mb-1">Email</label>
-                            <input type="email" id="contact-email" class="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-all">
-                        </div>
-                        <div>
-                            <label for="contact-service" class="block text-sm font-medium text-slate-700 mb-1">Service Type</label>
-                            <select id="contact-service" class="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-all">
-                                <option>Roof Repair</option>
-                                <option>Roof Replacement</option>
-                                <option>Storm Damage</option>
-                                <option>Inspection</option>
-                                <option>Other</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label for="contact-message" class="block text-sm font-medium text-slate-700 mb-1">Message</label>
-                            <textarea id="contact-message" rows="4" class="w-full bg-white border border-slate-300 rounded-lg px-4 py-3 focus:outline-none focus:border-brand-accent focus:ring-1 focus:ring-brand-accent transition-all"></textarea>
-                        </div>
-                        <button type="button" class="w-full bg-brand-dark hover:bg-slate-800 text-white font-bold py-4 rounded-lg shadow-lg transition-all transform hover:-translate-y-1 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent">
-                            Send Message
-                        </button>
+                <div class="fade-in">
+                    <form style="background: var(--primary-charcoal); padding: 3rem; border-radius: 4px;">
+                        <h3 style="margin-bottom:1.5rem; font-family:'Manrope',sans-serif;">Send a Message</h3>
+                        <div class="form-group"><input type="text" class="form-control" placeholder="Your Name" name="name"></div>
+                        <div class="form-group"><input type="email" class="form-control" placeholder="Your Email" name="email"></div>
+                        <div class="form-group"><input type="tel" class="form-control" placeholder="Your Phone" name="phone"></div>
+                        <div class="form-group"><textarea class="form-control" placeholder="Message" name="message" rows="5"></textarea></div>
+                        <button type="submit" class="btn" style="width:100%;">Send Message</button>
                     </form>
                 </div>
             </div>
@@ -696,262 +1323,161 @@
     </section>
 
     <!-- Footer -->
-    <footer class="bg-brand-dark text-slate-400 pt-16 pb-8 border-t border-slate-800" aria-label="Footer">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
-                
-                <!-- Brand Column -->
-                <div>
-                    <a href="#" class="text-2xl font-bold text-white tracking-tight flex items-center gap-2 mb-6 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">
-                        <div class="w-8 h-8 bg-brand-accent rounded flex items-center justify-center text-white">
-                            <i class="fas fa-house-chimney"></i>
-                        </div>
-                        Gatluak<span class="text-brand-accent">Roof</span>Expert
-                    </a>
-                    <p class="mb-6 leading-relaxed">
-                        Houston's premier roofing contractor dedicated to quality, integrity, and customer satisfaction. We protect what matters most.
-                    </p>
-                    <div class="flex space-x-4">
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" aria-label="Facebook">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" aria-label="Instagram">
-                            <i class="fab fa-instagram"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" aria-label="Twitter">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 rounded-full bg-slate-800 flex items-center justify-center hover:bg-brand-accent hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </div>
-                </div>
-                
-                <!-- Quick Links -->
-                <div>
-                    <h4 class="text-white font-bold mb-6">Quick Links</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#home" class="hover:text-brand-accent transition-colors flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded"><i class="fas fa-chevron-right text-xs"></i> Home</a></li>
-                        <li><a href="#about" class="hover:text-brand-accent transition-colors flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded"><i class="fas fa-chevron-right text-xs"></i> About Us</a></li>
-                        <li><a href="#services" class="hover:text-brand-accent transition-colors flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded"><i class="fas fa-chevron-right text-xs"></i> Services</a></li>
-                        <li><a href="#gallery" class="hover:text-brand-accent transition-colors flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded"><i class="fas fa-chevron-right text-xs"></i> Projects</a></li>
-                        <li><a href="#contact" class="hover:text-brand-accent transition-colors flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded"><i class="fas fa-chevron-right text-xs"></i> Contact</a></li>
-                    </ul>
-                </div>
-
-                <!-- Services List -->
-                <div>
-                    <h4 class="text-white font-bold mb-6">Our Services</h4>
-                    <ul class="space-y-3">
-                        <li><a href="#" class="hover:text-brand-accent transition-colors flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded"><i class="fas fa-check text-xs text-brand-accent"></i> Roof Installation</a></li>
-                        <li><a href="#" class="hover:text-brand-accent transition-colors flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded"><i class="fas fa-check text-xs text-brand-accent"></i> Roof Replacement</a></li>
-                        <li><a href="#" class="hover:text-brand-accent transition-colors flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded"><i class="fas fa-check text-xs text-brand-accent"></i> Storm Damage</a></li>
-                        <li><a href="#" class="hover:text-brand-accent transition-colors flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded"><i class="fas fa-check text-xs text-brand-accent"></i> Commercial Roofing</a></li>
-                        <li><a href="#" class="hover:text-brand-accent transition-colors flex items-center gap-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded"><i class="fas fa-check text-xs text-brand-accent"></i> Inspections</a></li>
-                    </ul>
-                </div>
-
-                <!-- Contact Info Column -->
-                <div>
-                    <h4 class="text-white font-bold mb-6">Contact Info</h4>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <i class="fas fa-map-marker-alt text-brand-accent mt-1"></i>
-                            <span>123 Main St,<br>Houston, TX 77001</span>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fas fa-phone-alt text-brand-accent"></i>
-                            <a href="tel:7135558742" class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">(713) 555-8742</a>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fas fa-envelope text-brand-accent"></i>
-                            <a href="mailto:info@gatluakroofexpert.com" class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">info@gatluakroofexpert.com</a>
-                        </li>
-                        <li class="flex items-center gap-3">
-                            <i class="fas fa-clock text-brand-accent"></i>
-                            <span>Mon - Fri: 8AM - 6PM</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-sm">
-                <p>&copy; 2023 Gatluak Roof Expert. All rights reserved.</p>
-                <div class="flex space-x-6 mt-4 md:mt-0">
-                    <a href="#" class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">Privacy Policy</a>
-                    <a href="#" class="hover:text-white transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-accent rounded">Terms of Service</a>
-                </div>
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand"><a href="#" class="logo"><i class="fas fa-home"></i> James Roofing</a><p>Providing Houston with premium roofing solutions since 2003. Quality, integrity, and customer satisfaction are our top priorities.</p><div class="social-links"><a href="#" class="social-icon" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a><a href="#" class="social-icon" aria-label="Instagram"><i class="fab fa-instagram"></i></a><a href="#" class="social-icon" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a><a href="#" class="social-icon" aria-label="Twitter"><i class="fab fa-twitter"></i></a></div></div>
+                <div class="footer-col"><h4>Quick Links</h4><ul class="footer-links"><li><a href="#home">Home</a></li><li><a href="#about">About Us</a></li><li><a href="#services">Services</a></li><li><a href="#projects">Projects</a></li><li><a href="#contact">Contact</a></li></ul></div>
+                <div class="footer-col"><h4>Services</h4><ul class="footer-links"><li><a href="#">Residential Roofing</a></li><li><a href="#">Commercial Roofing</a></li><li><a href="#">Roof Repair</a></li><li><a href="#">Storm Damage</a></li><li><a href="#">Gutter Installation</a></li></ul></div>
+                <div class="footer-col"><h4>Service Areas</h4><ul class="footer-links"><li><a href="#">Houston</a></li><li><a href="#">Katy</a></li><li><a href="#">Sugar Land</a></li><li><a href="#">The Woodlands</a></li><li><a href="#">Pearland</a></li></ul></div>
             </div>
         </div>
+        <div class="footer-bottom"><div class="container"><p>&copy; 2025 James Roofing. All Rights Reserved. Designed for Excellence.</p></div></div>
     </footer>
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="fixed inset-0 z-50 bg-black/90 hidden flex items-center justify-center p-4 opacity-0 pointer-events-none" role="dialog" aria-modal="true" aria-label="Image lightbox">
-        <button onclick="closeLightbox()" class="absolute top-4 right-4 text-white hover:text-brand-accent text-4xl z-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-white rounded" aria-label="Close lightbox">&times;</button>
-        <img id="lightbox-img" src="" alt="Full size view" class="max-w-full max-h-[90vh] rounded-lg shadow-2xl transform scale-95 transition-transform duration-300">
-    </div>
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-chevron-up"></i></button>
 
-    <!-- Scripts -->
     <script>
         (function() {
-            // Navbar Scroll Effect
+            // Typing animation
+            const textElement = document.querySelector('.typing-container');
+            if (textElement) {
+                const phrases = [
+                    "Professional Roofing Experts",
+                    "Houston's Trusted Roofing Company",
+                    "Quality Roof Installation & Repair",
+                    "Built to Protect Your Home"
+                ];
+                let phraseIndex = 0, charIndex = 0, isDeleting = false, typeSpeed = 100;
+                function type() {
+                    const currentPhrase = phrases[phraseIndex];
+                    if (isDeleting) {
+                        textElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                        charIndex--;
+                        typeSpeed = 50;
+                    } else {
+                        textElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                        charIndex++;
+                        typeSpeed = 100;
+                    }
+                    if (!isDeleting && charIndex === currentPhrase.length) {
+                        isDeleting = true;
+                        typeSpeed = 2000;
+                    } else if (isDeleting && charIndex === 0) {
+                        isDeleting = false;
+                        phraseIndex = (phraseIndex + 1) % phrases.length;
+                        typeSpeed = 500;
+                    }
+                    setTimeout(type, typeSpeed);
+                }
+                type();
+            }
+
+            // Sticky nav
             const navbar = document.getElementById('navbar');
             window.addEventListener('scroll', () => {
-                if (window.scrollY > 50) {
-                    navbar.classList.add('nav-scrolled');
-                    navbar.classList.remove('pt-2');
-                } else {
-                    navbar.classList.remove('nav-scrolled');
-                    navbar.classList.add('pt-2');
-                }
+                navbar.classList.toggle('scrolled', window.scrollY > 50);
             });
 
-            // Mobile Menu Toggle with ARIA and icon swap
-            const btn = document.getElementById('mobile-menu-btn');
-            const menu = document.getElementById('mobile-menu');
-            const icon = btn.querySelector('i');
+            // Mobile menu elements
+            const mobileToggle = document.getElementById('mobile-toggle');
+            const navMenu = document.getElementById('nav-menu');
+            const dropdownParents = document.querySelectorAll('.has-dropdown');
+            const body = document.body;
 
-            btn.addEventListener('click', () => {
-                const expanded = btn.getAttribute('aria-expanded') === 'true' ? false : true;
-                btn.setAttribute('aria-expanded', expanded);
-                menu.classList.toggle('hidden');
-                icon.classList.toggle('fa-bars');
-                icon.classList.toggle('fa-times');
-            });
-
-            // Close mobile menu when clicking a link (except dropdown toggles)
-            menu.querySelectorAll('a').forEach(link => {
-                link.addEventListener('click', () => {
-                    menu.classList.add('hidden');
-                    btn.setAttribute('aria-expanded', 'false');
-                    icon.classList.add('fa-bars');
-                    icon.classList.remove('fa-times');
-                });
-            });
-
-            // Mobile submenu toggles
-            const servicesBtn = document.getElementById('mobile-services-btn');
-            const servicesSub = document.getElementById('mobile-services-submenu');
-            const areasBtn = document.getElementById('mobile-areas-btn');
-            const areasSub = document.getElementById('mobile-areas-submenu');
-
-            function toggleSubmenu(button, submenu) {
-                const expanded = button.getAttribute('aria-expanded') === 'true' ? false : true;
-                button.setAttribute('aria-expanded', expanded);
-                submenu.classList.toggle('open');
-                button.querySelector('i').style.transform = expanded ? 'rotate(180deg)' : '';
-            }
-
-            if (servicesBtn) {
-                servicesBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    toggleSubmenu(servicesBtn, servicesSub);
-                });
-            }
-            if (areasBtn) {
-                areasBtn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    toggleSubmenu(areasBtn, areasSub);
-                });
-            }
-
-            // Typing Effect
-            const textElement = document.getElementById('typing-text');
-            const phrases = [
-                "Gatluak Roof Expert",
-                "Houston's Trusted Roofing Professionals",
-                "Roof Repair • Replacement • Installation"
-            ];
-            let phraseIndex = 0;
-            let charIndex = 0;
-            let isDeleting = false;
-            let typeSpeed = 100;
-
-            function type() {
-                const currentPhrase = phrases[phraseIndex];
-                
-                if (isDeleting) {
-                    textElement.textContent = currentPhrase.substring(0, charIndex - 1);
-                    charIndex--;
-                    typeSpeed = 50;
-                } else {
-                    textElement.textContent = currentPhrase.substring(0, charIndex + 1);
-                    charIndex++;
-                    typeSpeed = 100;
-                }
-
-                if (!isDeleting && charIndex === currentPhrase.length) {
-                    isDeleting = true;
-                    typeSpeed = 2000; // Pause at end
-                } else if (isDeleting && charIndex === 0) {
-                    isDeleting = false;
-                    phraseIndex = (phraseIndex + 1) % phrases.length;
-                    typeSpeed = 500; // Pause before new word
-                }
-
-                setTimeout(type, typeSpeed);
-            }
-
-            document.addEventListener('DOMContentLoaded', type);
-
-            // Lightbox Logic
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-
-            window.openLightbox = function(element) {
-                const imgSrc = element.querySelector('img').src;
-                lightboxImg.src = imgSrc;
-                lightbox.classList.remove('hidden');
-                setTimeout(() => {
-                    lightbox.classList.remove('opacity-0', 'pointer-events-none');
-                    lightboxImg.classList.remove('scale-95');
-                    lightboxImg.classList.add('scale-100');
-                }, 10);
-                // Trap focus inside lightbox (simple)
-                lightbox.querySelector('button').focus();
+            const closeMenu = () => {
+                navMenu.classList.remove('active');
+                mobileToggle.querySelector('i').className = 'fas fa-bars';
+                mobileToggle.setAttribute('aria-expanded', 'false');
+                body.style.overflow = '';
             };
 
-            window.closeLightbox = function() {
-                lightbox.classList.add('opacity-0', 'pointer-events-none');
-                lightboxImg.classList.remove('scale-100');
-                lightboxImg.classList.add('scale-95');
-                setTimeout(() => {
-                    lightbox.classList.add('hidden');
-                }, 300);
-            };
+            mobileToggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isActive = navMenu.classList.toggle('active');
+                mobileToggle.querySelector('i').className = isActive ? 'fas fa-times' : 'fas fa-bars';
+                mobileToggle.setAttribute('aria-expanded', isActive);
+                body.style.overflow = isActive ? 'hidden' : '';
+            });
 
-            // Close lightbox on background click and Escape key
-            lightbox.addEventListener('click', (e) => {
-                if (e.target === lightbox) {
-                    closeLightbox();
+            document.addEventListener('click', (e) => {
+                if (navMenu.classList.contains('active') && !navMenu.contains(e.target) && !mobileToggle.contains(e.target)) {
+                    closeMenu();
                 }
             });
 
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
-                    closeLightbox();
-                }
-            });
+            function initMobileDropdowns() {
+                const isMobile = window.innerWidth <= 992;
+                dropdownParents.forEach(item => {
+                    const link = item.querySelector('.nav-link');
+                    if (!link) return;
+                    link.removeEventListener('click', mobileDropdownHandler);
+                    if (isMobile) {
+                        link.addEventListener('click', mobileDropdownHandler);
+                    }
+                });
+            }
 
-            // Close mobile menu on window resize (if open)
+            function mobileDropdownHandler(e) {
+                e.preventDefault();
+                const parent = this.closest('.has-dropdown');
+                if (parent) parent.classList.toggle('active');
+            }
+
             window.addEventListener('resize', () => {
-                if (window.innerWidth >= 1024) { // lg breakpoint
-                    menu.classList.add('hidden');
-                    btn.setAttribute('aria-expanded', 'false');
-                    icon.classList.add('fa-bars');
-                    icon.classList.remove('fa-times');
-                    // Also reset submenus
-                    if (servicesBtn) {
-                        servicesBtn.setAttribute('aria-expanded', 'false');
-                        servicesSub.classList.remove('open');
-                        servicesBtn.querySelector('i').style.transform = '';
-                    }
-                    if (areasBtn) {
-                        areasBtn.setAttribute('aria-expanded', 'false');
-                        areasSub.classList.remove('open');
-                        areasBtn.querySelector('i').style.transform = '';
-                    }
+                if (window.innerWidth > 992) {
+                    dropdownParents.forEach(p => p.classList.remove('active'));
+                    closeMenu();
+                } else {
+                    initMobileDropdowns();
                 }
+            });
+
+            initMobileDropdowns();
+
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    const parent = link.closest('.has-dropdown');
+                    if (window.innerWidth <= 992 && parent) {
+                        // handled by mobileDropdownHandler
+                    } else {
+                        closeMenu();
+                    }
+                });
+            });
+
+            // Intersection Observer for fade-in
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+            // Form submission alert
+            document.querySelectorAll('form').forEach(form => {
+                form.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    alert('Thank you for your message! We will contact you shortly.');
+                    form.reset();
+                });
+            });
+
+            // Back to top button
+            const backToTop = document.getElementById('backToTop');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 500) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+            backToTop.addEventListener('click', () => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
         })();
     </script>
