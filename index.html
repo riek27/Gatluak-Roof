@@ -2,7 +2,7 @@
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <title>Gatluak Remodeling | Houston's Premier Renovations</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -134,12 +134,17 @@
             transform: translateY(0);
         }
 
-        /* Parallax Effect */
+        /* Parallax Effect (simplified for mobile) */
         .parallax-bg {
             background-attachment: fixed;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
+        }
+        @media (max-width: 768px) {
+            .parallax-bg {
+                background-attachment: scroll;
+            }
         }
 
         /* Gold Gradient Text */
@@ -175,96 +180,103 @@
         #mobile-menu {
             transition: all 0.3s ease-in-out;
         }
+        /* Fix for mobile form stacking */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body class="antialiased selection:bg-brand-gold selection:text-brand-dark">
 
-    <!-- Navigation -->
-    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-8 px-6 lg:px-12 border-b border-white/0">
+    <!-- Navigation (same structure, keep it) -->
+    <nav id="navbar" class="fixed w-full z-50 transition-all duration-500 py-6 px-4 lg:px-12 border-b border-white/0">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
-            <a href="#" class="text-2xl font-serif font-bold tracking-widest text-white flex items-center gap-3 group">
-                <span class="w-10 h-10 bg-gradient-to-br from-brand-gold to-yellow-600 rounded-sm flex items-center justify-center text-brand-dark font-black text-xl shadow-lg group-hover:shadow-brand-gold/50 transition-all duration-300">G</span>
+            <a href="#" class="text-xl lg:text-2xl font-serif font-bold tracking-widest text-white flex items-center gap-2 lg:gap-3 group">
+                <span class="w-8 h-8 lg:w-10 lg:h-10 bg-gradient-to-br from-brand-gold to-yellow-600 rounded-sm flex items-center justify-center text-brand-dark font-black text-base lg:text-xl shadow-lg group-hover:shadow-brand-gold/50 transition-all duration-300">G</span>
                 <div class="flex flex-col">
-                    <span class="leading-none">GATLUAK</span>
-                    <span class="text-xs text-brand-gold tracking-[0.3em] leading-none mt-1">REMODELING</span>
+                    <span class="leading-none text-sm lg:text-base">GATLUAK</span>
+                    <span class="text-[0.6rem] lg:text-xs text-brand-gold tracking-[0.2em] lg:tracking-[0.3em] leading-none mt-0.5 lg:mt-1">REMODELING</span>
                 </div>
             </a>
             
             <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center space-x-10">
+            <div class="hidden md:flex items-center space-x-6 lg:space-x-10">
                 <a href="#home" class="text-xs font-medium text-gray-300 hover:text-brand-gold transition-colors tracking-widest uppercase">Home</a>
                 <a href="#about" class="text-xs font-medium text-gray-300 hover:text-brand-gold transition-colors tracking-widest uppercase">About</a>
                 <a href="#services" class="text-xs font-medium text-gray-300 hover:text-brand-gold transition-colors tracking-widest uppercase">Services</a>
                 <a href="#gallery" class="text-xs font-medium text-gray-300 hover:text-brand-gold transition-colors tracking-widest uppercase">Gallery</a>
                 <a href="#areas" class="text-xs font-medium text-gray-300 hover:text-brand-gold transition-colors tracking-widest uppercase">Areas</a>
-                <a href="#contact" class="px-8 py-3 bg-gradient-to-r from-brand-gold to-yellow-600 text-brand-dark text-xs font-bold tracking-widest uppercase rounded-sm hover:shadow-lg hover:shadow-brand-gold/30 transition-all duration-300 btn-luxury">Get a Quote</a>
+                <a href="#contact" class="px-6 lg:px-8 py-2.5 lg:py-3 bg-gradient-to-r from-brand-gold to-yellow-600 text-brand-dark text-xs font-bold tracking-widest uppercase rounded-sm hover:shadow-lg hover:shadow-brand-gold/30 transition-all duration-300 btn-luxury">Get a Quote</a>
             </div>
 
             <!-- Mobile Menu Button -->
             <button id="mobile-menu-btn" class="md:hidden text-white focus:outline-none">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"></path></svg>
             </button>
         </div>
         
         <!-- Mobile Menu Dropdown -->
-        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full glass border-t border-white/10 md:hidden flex-col p-8 space-y-6 backdrop-blur-xl">
-            <a href="#home" class="block text-lg font-medium text-white hover:text-brand-gold">Home</a>
-            <a href="#about" class="block text-lg font-medium text-white hover:text-brand-gold">About</a>
-            <a href="#services" class="block text-lg font-medium text-white hover:text-brand-gold">Services</a>
-            <a href="#gallery" class="block text-lg font-medium text-white hover:text-brand-gold">Gallery</a>
-            <a href="#areas" class="block text-lg font-medium text-white hover:text-brand-gold">Service Areas</a>
-            <a href="#contact" class="block text-lg font-medium text-brand-gold">Contact Us</a>
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full glass border-t border-white/10 md:hidden flex-col p-6 space-y-5 backdrop-blur-xl">
+            <a href="#home" class="block text-base font-medium text-white hover:text-brand-gold">Home</a>
+            <a href="#about" class="block text-base font-medium text-white hover:text-brand-gold">About</a>
+            <a href="#services" class="block text-base font-medium text-white hover:text-brand-gold">Services</a>
+            <a href="#gallery" class="block text-base font-medium text-white hover:text-brand-gold">Gallery</a>
+            <a href="#areas" class="block text-base font-medium text-white hover:text-brand-gold">Service Areas</a>
+            <a href="#contact" class="block text-base font-medium text-brand-gold">Contact Us</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header id="home" class="relative h-screen w-full overflow-hidden flex items-center justify-center">
+    <!-- Hero Section (modified: form visible on mobile, smaller CTA) -->
+    <header id="home" class="relative min-h-screen w-full overflow-hidden flex items-center justify-center pt-24 lg:pt-0">
         <!-- Background Image with Parallax -->
         <div class="absolute inset-0 z-0 parallax-bg" style="background-image: url('https://image.qwenlm.ai/public_source/30fc3533-c093-40eb-98a7-78430891ab04/176c32cd9-0f0b-4166-acbd-d6c82bba9a22.png');"></div>
         <div class="absolute inset-0 bg-black/50 hero-overlay"></div>
 
-        <div class="relative z-10 max-w-7xl mx-auto px-6 w-full grid lg:grid-cols-2 gap-12 items-center pt-20">
+        <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 w-full lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center pt-8 lg:pt-20">
             <!-- Hero Text -->
-            <div class="text-left space-y-8 animate-fade-in-up">
-                <div class="inline-flex items-center gap-2 px-4 py-2 border border-brand-gold/30 rounded-full bg-black/40 backdrop-blur-md">
-                    <span class="w-2 h-2 bg-brand-gold rounded-full animate-pulse"></span>
-                    <span class="text-brand-gold text-xs font-bold tracking-[0.2em] uppercase">Houston's Premier Builder</span>
+            <div class="text-left space-y-5 lg:space-y-8 animate-fade-in-up">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 lg:px-4 lg:py-2 border border-brand-gold/30 rounded-full bg-black/40 backdrop-blur-md">
+                    <span class="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-brand-gold rounded-full animate-pulse"></span>
+                    <span class="text-brand-gold text-[0.6rem] lg:text-xs font-bold tracking-[0.15em] lg:tracking-[0.2em] uppercase">Houston's Premier Builder</span>
                 </div>
-                <h1 class="text-6xl md:text-8xl font-serif font-bold leading-none text-white">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-serif font-bold leading-none text-white">
                     Crafting <br>
                     <span class="text-gradient-gold typing-cursor" id="typing-text"></span>
                 </h1>
-                <p class="text-gray-300 text-xl md:text-2xl max-w-lg leading-relaxed font-light">
+                <p class="text-gray-300 text-base sm:text-lg md:text-xl lg:text-2xl max-w-lg leading-relaxed font-light">
                     Gatluak Remodeling brings 2026 design trends to your doorstep. We craft luxury living spaces with precision, integrity, and modern aesthetics.
                 </p>
-                <div class="flex gap-6 pt-4">
-                    <a href="#gallery" class="px-10 py-5 bg-gradient-to-r from-brand-gold to-yellow-600 text-brand-dark font-bold tracking-widest uppercase rounded-sm hover:shadow-lg hover:shadow-brand-gold/30 transition-all duration-300 btn-luxury">View Projects</a>
-                    <a href="#about" class="px-10 py-5 border border-white/30 text-white font-bold tracking-widest uppercase rounded-sm hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">Our Story</a>
+                <!-- Smaller CTA buttons: reduced padding -->
+                <div class="flex flex-wrap gap-4 pt-2 lg:pt-4">
+                    <a href="#gallery" class="px-6 lg:px-8 py-3 lg:py-4 bg-gradient-to-r from-brand-gold to-yellow-600 text-brand-dark font-bold tracking-widest uppercase rounded-sm text-xs lg:text-sm hover:shadow-lg hover:shadow-brand-gold/30 transition-all duration-300 btn-luxury">View Projects</a>
+                    <a href="#about" class="px-6 lg:px-8 py-3 lg:py-4 border border-white/30 text-white font-bold tracking-widest uppercase rounded-sm text-xs lg:text-sm hover:bg-white/10 transition-all duration-300 backdrop-blur-sm">Our Story</a>
                 </div>
             </div>
 
-            <!-- Quote Form (Floating Glass) -->
-            <div class="hidden lg:block glass p-10 rounded-2xl border border-white/10 shadow-2xl animate-scale-in" style="animation-delay: 0.3s;">
-                <div class="mb-8">
-                    <h3 class="text-3xl font-serif font-bold mb-2">Request Consultation</h3>
-                    <p class="text-gray-400 text-sm">Begin your transformation journey today.</p>
+            <!-- Quote Form (visible on all screens, stacked below on mobile) -->
+            <div class="mt-10 lg:mt-0 glass p-6 sm:p-8 lg:p-10 rounded-2xl border border-white/10 shadow-2xl animate-scale-in w-full max-w-md mx-auto lg:mx-0 lg:max-w-none" style="animation-delay: 0.3s;">
+                <div class="mb-6 lg:mb-8">
+                    <h3 class="text-2xl lg:text-3xl font-serif font-bold mb-2">Request Consultation</h3>
+                    <p class="text-gray-400 text-xs lg:text-sm">Begin your transformation journey today.</p>
                 </div>
-                <form class="space-y-5" onsubmit="event.preventDefault(); alert('Thank you! We will contact you shortly.');">
-                    <div class="grid grid-cols-2 gap-4">
-                        <input type="text" placeholder="First Name" class="modern-input w-full px-5 py-4 rounded-sm text-sm font-light">
-                        <input type="text" placeholder="Last Name" class="modern-input w-full px-5 py-4 rounded-sm text-sm font-light">
+                <form class="space-y-4 lg:space-y-5" onsubmit="event.preventDefault(); alert('Thank you! We will contact you shortly.');">
+                    <div class="grid grid-cols-2 gap-3 lg:gap-4">
+                        <input type="text" placeholder="First Name" class="modern-input w-full px-4 lg:px-5 py-3 lg:py-4 rounded-sm text-xs lg:text-sm font-light">
+                        <input type="text" placeholder="Last Name" class="modern-input w-full px-4 lg:px-5 py-3 lg:py-4 rounded-sm text-xs lg:text-sm font-light">
                     </div>
-                    <input type="email" placeholder="Email Address" class="modern-input w-full px-5 py-4 rounded-sm text-sm font-light">
-                    <input type="tel" placeholder="Phone Number" class="modern-input w-full px-5 py-4 rounded-sm text-sm font-light">
-                    <select class="modern-input w-full px-5 py-4 rounded-sm text-sm text-gray-400 font-light cursor-pointer">
+                    <input type="email" placeholder="Email Address" class="modern-input w-full px-4 lg:px-5 py-3 lg:py-4 rounded-sm text-xs lg:text-sm font-light">
+                    <input type="tel" placeholder="Phone Number" class="modern-input w-full px-4 lg:px-5 py-3 lg:py-4 rounded-sm text-xs lg:text-sm font-light">
+                    <select class="modern-input w-full px-4 lg:px-5 py-3 lg:py-4 rounded-sm text-xs lg:text-sm text-gray-400 font-light cursor-pointer">
                         <option value="" disabled selected>Select Service</option>
                         <option value="kitchen">Kitchen Remodel</option>
                         <option value="bathroom">Bathroom Remodel</option>
                         <option value="flooring">Flooring</option>
                         <option value="full-home">Full Home Renovation</option>
                     </select>
-                    <textarea placeholder="Project Details" rows="3" class="modern-input w-full px-5 py-4 rounded-sm text-sm font-light"></textarea>
-                    <button type="submit" class="w-full py-5 bg-gradient-to-r from-brand-gold to-yellow-600 text-brand-dark font-bold tracking-widest uppercase rounded-sm hover:shadow-lg hover:shadow-brand-gold/30 transition-all duration-300 transform hover:scale-[1.02] btn-luxury">
+                    <textarea placeholder="Project Details" rows="3" class="modern-input w-full px-4 lg:px-5 py-3 lg:py-4 rounded-sm text-xs lg:text-sm font-light"></textarea>
+                    <button type="submit" class="w-full py-4 lg:py-5 bg-gradient-to-r from-brand-gold to-yellow-600 text-brand-dark font-bold tracking-widest uppercase rounded-sm text-xs lg:text-sm hover:shadow-lg hover:shadow-brand-gold/30 transition-all duration-300 transform hover:scale-[1.02] btn-luxury">
                         Request Quote
                     </button>
                 </form>
@@ -272,51 +284,51 @@
         </div>
         
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <svg class="w-6 h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        <div class="absolute bottom-5 lg:bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-5 h-5 lg:w-6 lg:h-6 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
         </div>
     </header>
 
-    <!-- About Section -->
-    <section id="about" class="py-32 bg-brand-dark relative overflow-hidden">
-        <!-- Decorative Elements -->
-        <div class="absolute top-0 right-0 w-96 h-96 bg-brand-gold/5 rounded-full blur-3xl"></div>
-        <div class="absolute bottom-0 left-0 w-96 h-96 bg-brand-gold/5 rounded-full blur-3xl"></div>
+    <!-- About Section (minor responsive tweaks) -->
+    <section id="about" class="py-20 lg:py-32 bg-brand-dark relative overflow-hidden">
+        <!-- Decorative Elements (hidden on small screens to avoid overflow) -->
+        <div class="absolute top-0 right-0 w-48 lg:w-96 h-48 lg:h-96 bg-brand-gold/5 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 w-48 lg:w-96 h-48 lg:h-96 bg-brand-gold/5 rounded-full blur-3xl"></div>
 
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-20 items-center">
-                <div class="relative reveal group">
-                    <div class="absolute -top-6 -left-6 w-32 h-32 border-t-2 border-l-2 border-brand-gold/50"></div>
-                    <img src="https://image.qwenlm.ai/public_source/30fc3533-c093-40eb-98a7-78430891ab04/17675c906-fa51-4b31-90c7-7b9c4c2b1165.png" alt="Contractor" class="rounded-sm shadow-2xl w-full object-cover h-[600px] grayscale group-hover:grayscale-0 transition-all duration-1000">
-                    <div class="absolute -bottom-6 -right-6 w-32 h-32 border-b-2 border-r-2 border-brand-gold/50"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <div class="relative reveal group order-2 lg:order-1 mt-12 lg:mt-0">
+                    <div class="absolute -top-4 -left-4 lg:-top-6 lg:-left-6 w-20 lg:w-32 h-20 lg:h-32 border-t-2 border-l-2 border-brand-gold/50"></div>
+                    <img src="https://image.qwenlm.ai/public_source/30fc3533-c093-40eb-98a7-78430891ab04/17675c906-fa51-4b31-90c7-7b9c4c2b1165.png" alt="Contractor" class="rounded-sm shadow-2xl w-full object-cover h-[400px] lg:h-[600px] grayscale group-hover:grayscale-0 transition-all duration-1000">
+                    <div class="absolute -bottom-4 -right-4 lg:-bottom-6 lg:-right-6 w-20 lg:w-32 h-20 lg:h-32 border-b-2 border-r-2 border-brand-gold/50"></div>
                     
                     <!-- Floating Badge -->
-                    <div class="absolute -bottom-10 -left-10 bg-brand-gold text-brand-dark p-6 rounded-sm shadow-xl">
-                        <span class="block text-4xl font-serif font-bold">15+</span>
-                        <span class="text-xs font-bold tracking-widest uppercase">Years of Excellence</span>
+                    <div class="absolute -bottom-8 -left-4 lg:-bottom-10 lg:-left-10 bg-brand-gold text-brand-dark p-4 lg:p-6 rounded-sm shadow-xl">
+                        <span class="block text-2xl lg:text-4xl font-serif font-bold">15+</span>
+                        <span class="text-[0.5rem] lg:text-xs font-bold tracking-widest uppercase">Years of Excellence</span>
                     </div>
                 </div>
-                <div class="reveal">
-                    <h2 class="text-brand-gold font-bold tracking-[0.3em] uppercase text-sm mb-4">About Gatluak</h2>
-                    <h3 class="text-5xl md:text-6xl font-serif font-bold text-white mb-8 leading-tight">Building Trust, <br><span class="text-gradient-gold">One Room at a Time.</span></h3>
-                    <p class="text-gray-400 text-lg mb-8 leading-relaxed font-light">
+                <div class="reveal order-1 lg:order-2">
+                    <h2 class="text-brand-gold font-bold tracking-[0.2em] lg:tracking-[0.3em] uppercase text-xs lg:text-sm mb-3 lg:mb-4">About Gatluak</h2>
+                    <h3 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-white mb-4 lg:mb-8 leading-tight">Building Trust, <br><span class="text-gradient-gold">One Room at a Time.</span></h3>
+                    <p class="text-gray-400 text-sm lg:text-lg mb-6 lg:mb-8 leading-relaxed font-light">
                         Based in the heart of Houston, Texas, Gatluak Remodeling isn't just a construction company; we are artisans of living spaces. With over a decade of experience, we specialize in transforming outdated structures into modern masterpieces.
                     </p>
-                    <p class="text-gray-400 text-lg mb-12 leading-relaxed font-light">
+                    <p class="text-gray-400 text-sm lg:text-lg mb-8 lg:mb-12 leading-relaxed font-light">
                         Our philosophy is simple: Quality craftsmanship meets transparent communication. We treat your home as if it were our own, ensuring every detail aligns with your vision and the latest 2026 design trends.
                     </p>
-                    <div class="grid grid-cols-3 gap-8 border-t border-white/10 pt-12">
+                    <div class="grid grid-cols-3 gap-4 lg:gap-8 border-t border-white/10 pt-8 lg:pt-12">
                         <div>
-                            <span class="block text-4xl font-serif font-bold text-white">500+</span>
-                            <span class="text-sm text-gray-500 uppercase tracking-widest">Projects</span>
+                            <span class="block text-2xl lg:text-4xl font-serif font-bold text-white">500+</span>
+                            <span class="text-[0.6rem] lg:text-sm text-gray-500 uppercase tracking-widest">Projects</span>
                         </div>
                         <div>
-                            <span class="block text-4xl font-serif font-bold text-white">100%</span>
-                            <span class="text-sm text-gray-500 uppercase tracking-widest">Satisfaction</span>
+                            <span class="block text-2xl lg:text-4xl font-serif font-bold text-white">100%</span>
+                            <span class="text-[0.6rem] lg:text-sm text-gray-500 uppercase tracking-widest">Satisfaction</span>
                         </div>
                         <div>
-                            <span class="block text-4xl font-serif font-bold text-white">24/7</span>
-                            <span class="text-sm text-gray-500 uppercase tracking-widest">Support</span>
+                            <span class="block text-2xl lg:text-4xl font-serif font-bold text-white">24/7</span>
+                            <span class="text-[0.6rem] lg:text-sm text-gray-500 uppercase tracking-widest">Support</span>
                         </div>
                     </div>
                 </div>
@@ -324,224 +336,221 @@
         </div>
     </section>
 
-    <!-- Services Section (Detailed & Visual) -->
-    <section id="services" class="py-32 bg-brand-gray relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20 reveal">
-                <h2 class="text-brand-gold font-bold tracking-[0.3em] uppercase text-sm mb-4">Our Expertise</h2>
-                <h3 class="text-5xl md:text-6xl font-serif font-bold text-white mb-6">Comprehensive <br>Renovation Solutions</h3>
-                <p class="text-gray-400 text-lg max-w-2xl mx-auto font-light">Tailored services designed to elevate your lifestyle with precision and luxury.</p>
+    <!-- Services Section (responsive images/text) -->
+    <section id="services" class="py-20 lg:py-32 bg-brand-gray relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="text-center mb-12 lg:mb-20 reveal">
+                <h2 class="text-brand-gold font-bold tracking-[0.2em] lg:tracking-[0.3em] uppercase text-xs lg:text-sm mb-3 lg:mb-4">Our Expertise</h2>
+                <h3 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-white mb-4 lg:mb-6">Comprehensive <br>Renovation Solutions</h3>
+                <p class="text-gray-400 text-sm lg:text-lg max-w-2xl mx-auto font-light">Tailored services designed to elevate your lifestyle with precision and luxury.</p>
             </div>
 
-            <div class="space-y-24">
+            <div class="space-y-16 lg:space-y-24">
                 
                 <!-- Service 1: Kitchen -->
-                <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
+                <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center reveal">
                     <div class="order-2 lg:order-1">
-                        <div class="glass-card p-10 rounded-2xl h-full flex flex-col justify-center">
-                            <div class="w-16 h-16 bg-gradient-to-br from-brand-gold/20 to-brand-gold/5 rounded-full flex items-center justify-center mb-8">
-                                <svg class="w-8 h-8 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                        <div class="glass-card p-6 lg:p-10 rounded-2xl h-full flex flex-col justify-center">
+                            <div class="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-brand-gold/20 to-brand-gold/5 rounded-full flex items-center justify-center mb-4 lg:mb-8">
+                                <svg class="w-6 h-6 lg:w-8 lg:h-8 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
                             </div>
-                            <h3 class="text-3xl font-serif font-bold text-white mb-6">Kitchen Remodeling</h3>
-                            <p class="text-gray-400 mb-8 font-light leading-relaxed">
-                                The kitchen is the heart of your home. We specialize in creating functional, breathtaking culinary spaces. From custom Italian cabinetry and quartz waterfall islands to smart appliance integration and ambient lighting design, we ensure your kitchen is as practical as it is beautiful.
+                            <h3 class="text-2xl lg:text-3xl font-serif font-bold text-white mb-4 lg:mb-6">Kitchen Remodeling</h3>
+                            <p class="text-gray-400 text-sm lg:text-base mb-6 lg:mb-8 font-light leading-relaxed">
+                                The kitchen is the heart of your home. We specialize in creating functional, breathtaking culinary spaces. From custom Italian cabinetry and quartz waterfall islands to smart appliance integration and ambient lighting design.
                             </p>
-                            <ul class="space-y-3 mb-8 text-gray-300 font-light">
-                                <li class="flex items-center gap-3"><span class="w-2 h-2 bg-brand-gold rounded-full"></span>Custom Cabinetry & Millwork</li>
-                                <li class="flex items-center gap-3"><span class="w-2 h-2 bg-brand-gold rounded-full"></span>Luxury Countertops (Marble/Quartz)</li>
-                                <li class="flex items-center gap-3"><span class="w-2 h-2 bg-brand-gold rounded-full"></span>Smart Home Integration</li>
+                            <ul class="space-y-2 lg:space-y-3 mb-6 lg:mb-8 text-gray-300 text-sm lg:text-base font-light">
+                                <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-brand-gold rounded-full"></span>Custom Cabinetry & Millwork</li>
+                                <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-brand-gold rounded-full"></span>Luxury Countertops (Marble/Quartz)</li>
+                                <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-brand-gold rounded-full"></span>Smart Home Integration</li>
                             </ul>
                             <a href="#" class="text-brand-gold font-bold text-xs uppercase tracking-widest hover:text-white transition-colors inline-flex items-center gap-2">Learn More <span>&rarr;</span></a>
                         </div>
                     </div>
                     <div class="order-1 lg:order-2 relative group">
                         <div class="absolute inset-0 bg-brand-gold/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                        <img src="https://image.qwenlm.ai/public_source/30fc3533-c093-40eb-98a7-78430891ab04/13bb47788-6f6d-4366-826e-6b8751e3e5f1.png" alt="Luxury Kitchen" class="relative rounded-sm shadow-2xl w-full object-cover h-[500px] transition-transform duration-700 group-hover:scale-[1.02]">
+                        <img src="https://image.qwenlm.ai/public_source/30fc3533-c093-40eb-98a7-78430891ab04/13bb47788-6f6d-4366-826e-6b8751e3e5f1.png" alt="Luxury Kitchen" class="relative rounded-sm shadow-2xl w-full object-cover h-[300px] lg:h-[500px] transition-transform duration-700 group-hover:scale-[1.02]">
                     </div>
                 </div>
 
-                <!-- Service 2: Bathroom -->
-                <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
+                <!-- Service 2: Bathroom (same adjustments) -->
+                <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center reveal">
                     <div class="relative group order-1">
                         <div class="absolute inset-0 bg-brand-gold/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                        <img src="https://image.qwenlm.ai/public_source/30fc3533-c093-40eb-98a7-78430891ab04/16c398d5b-df88-42a7-8755-f8923d7698cc.png" alt="Luxury Bathroom" class="relative rounded-sm shadow-2xl w-full object-cover h-[500px] transition-transform duration-700 group-hover:scale-[1.02]">
+                        <img src="https://image.qwenlm.ai/public_source/30fc3533-c093-40eb-98a7-78430891ab04/16c398d5b-df88-42a7-8755-f8923d7698cc.png" alt="Luxury Bathroom" class="relative rounded-sm shadow-2xl w-full object-cover h-[300px] lg:h-[500px] transition-transform duration-700 group-hover:scale-[1.02]">
                     </div>
                     <div class="order-2">
-                        <div class="glass-card p-10 rounded-2xl h-full flex flex-col justify-center">
-                            <div class="w-16 h-16 bg-gradient-to-br from-brand-gold/20 to-brand-gold/5 rounded-full flex items-center justify-center mb-8">
-                                <svg class="w-8 h-8 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                        <div class="glass-card p-6 lg:p-10 rounded-2xl h-full flex flex-col justify-center">
+                            <div class="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-brand-gold/20 to-brand-gold/5 rounded-full flex items-center justify-center mb-4 lg:mb-8">
+                                <svg class="w-6 h-6 lg:w-8 lg:h-8 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
                             </div>
-                            <h3 class="text-3xl font-serif font-bold text-white mb-6">Bathroom Renovation</h3>
-                            <p class="text-gray-400 mb-8 font-light leading-relaxed">
-                                Transform your daily routine into a spa-like experience. We design bathrooms that blend serenity with sophistication. Our team handles everything from heated flooring and rainfall showers to freestanding soaking tubs and vanity lighting.
+                            <h3 class="text-2xl lg:text-3xl font-serif font-bold text-white mb-4 lg:mb-6">Bathroom Renovation</h3>
+                            <p class="text-gray-400 text-sm lg:text-base mb-6 lg:mb-8 font-light leading-relaxed">
+                                Transform your daily routine into a spa-like experience. We design bathrooms that blend serenity with sophistication. Our team handles everything from heated flooring and rainfall showers to freestanding soaking tubs.
                             </p>
-                            <ul class="space-y-3 mb-8 text-gray-300 font-light">
-                                <li class="flex items-center gap-3"><span class="w-2 h-2 bg-brand-gold rounded-full"></span>Spa Showers & Steam Rooms</li>
-                                <li class="flex items-center gap-3"><span class="w-2 h-2 bg-brand-gold rounded-full"></span>Heated Flooring Systems</li>
-                                <li class="flex items-center gap-3"><span class="w-2 h-2 bg-brand-gold rounded-full"></span>Custom Vanities & Fixtures</li>
+                            <ul class="space-y-2 lg:space-y-3 mb-6 lg:mb-8 text-gray-300 text-sm lg:text-base font-light">
+                                <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-brand-gold rounded-full"></span>Spa Showers & Steam Rooms</li>
+                                <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-brand-gold rounded-full"></span>Heated Flooring Systems</li>
+                                <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-brand-gold rounded-full"></span>Custom Vanities & Fixtures</li>
                             </ul>
                             <a href="#" class="text-brand-gold font-bold text-xs uppercase tracking-widest hover:text-white transition-colors inline-flex items-center gap-2">Learn More <span>&rarr;</span></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Service 3: Flooring -->
-                <div class="grid lg:grid-cols-2 gap-12 items-center reveal">
+                <!-- Service 3: Flooring (same adjustments) -->
+                <div class="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center reveal">
                     <div class="order-2 lg:order-1">
-                        <div class="glass-card p-10 rounded-2xl h-full flex flex-col justify-center">
-                            <div class="w-16 h-16 bg-gradient-to-br from-brand-gold/20 to-brand-gold/5 rounded-full flex items-center justify-center mb-8">
-                                <svg class="w-8 h-8 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
+                        <div class="glass-card p-6 lg:p-10 rounded-2xl h-full flex flex-col justify-center">
+                            <div class="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-brand-gold/20 to-brand-gold/5 rounded-full flex items-center justify-center mb-4 lg:mb-8">
+                                <svg class="w-6 h-6 lg:w-8 lg:h-8 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 10h16M4 14h16M4 18h16"></path></svg>
                             </div>
-                            <h3 class="text-3xl font-serif font-bold text-white mb-6">Flooring Installation</h3>
-                            <p class="text-gray-400 mb-8 font-light leading-relaxed">
-                                The foundation of your home's aesthetic starts from the ground up. We offer premium installation services for wide-plank hardwood, luxury vinyl plank, and large-format porcelain tiles. Our precision ensures a seamless finish that lasts a lifetime.
+                            <h3 class="text-2xl lg:text-3xl font-serif font-bold text-white mb-4 lg:mb-6">Flooring Installation</h3>
+                            <p class="text-gray-400 text-sm lg:text-base mb-6 lg:mb-8 font-light leading-relaxed">
+                                The foundation of your home's aesthetic starts from the ground up. We offer premium installation services for wide-plank hardwood, luxury vinyl plank, and large-format porcelain tiles. Precision ensures a seamless finish.
                             </p>
-                            <ul class="space-y-3 mb-8 text-gray-300 font-light">
-                                <li class="flex items-center gap-3"><span class="w-2 h-2 bg-brand-gold rounded-full"></span>Wide-Plank Hardwood</li>
-                                <li class="flex items-center gap-3"><span class="w-2 h-2 bg-brand-gold rounded-full"></span>Luxury Vinyl Plank (LVP)</li>
-                                <li class="flex items-center gap-3"><span class="w-2 h-2 bg-brand-gold rounded-full"></span>Custom Tile Patterns</li>
+                            <ul class="space-y-2 lg:space-y-3 mb-6 lg:mb-8 text-gray-300 text-sm lg:text-base font-light">
+                                <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-brand-gold rounded-full"></span>Wide-Plank Hardwood</li>
+                                <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-brand-gold rounded-full"></span>Luxury Vinyl Plank (LVP)</li>
+                                <li class="flex items-center gap-3"><span class="w-1.5 h-1.5 lg:w-2 lg:h-2 bg-brand-gold rounded-full"></span>Custom Tile Patterns</li>
                             </ul>
                             <a href="#" class="text-brand-gold font-bold text-xs uppercase tracking-widest hover:text-white transition-colors inline-flex items-center gap-2">Learn More <span>&rarr;</span></a>
                         </div>
                     </div>
                     <div class="order-1 lg:order-2 relative group">
                         <div class="absolute inset-0 bg-brand-gold/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                        <img src="https://image.qwenlm.ai/public_source/30fc3533-c093-40eb-98a7-78430891ab04/14fe7674c-5f53-4f60-9596-e4566709f018.png" alt="Hardwood Flooring" class="relative rounded-sm shadow-2xl w-full object-cover h-[500px] transition-transform duration-700 group-hover:scale-[1.02]">
+                        <img src="https://image.qwenlm.ai/public_source/30fc3533-c093-40eb-98a7-78430891ab04/14fe7674c-5f53-4f60-9596-e4566709f018.png" alt="Hardwood Flooring" class="relative rounded-sm shadow-2xl w-full object-cover h-[300px] lg:h-[500px] transition-transform duration-700 group-hover:scale-[1.02]">
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <!-- Gallery Section -->
-    <section id="gallery" class="py-32 bg-brand-dark">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-16 reveal">
+    <!-- Gallery Section (responsive heights) -->
+    <section id="gallery" class="py-20 lg:py-32 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 lg:mb-16 reveal">
                 <div>
-                    <h2 class="text-brand-gold font-bold tracking-[0.3em] uppercase text-sm mb-4">Portfolio</h2>
-                    <h3 class="text-5xl md:text-6xl font-serif font-bold text-white mb-4">Featured Projects</h3>
-                    <p class="text-gray-400 text-lg max-w-xl font-light">A curated glimpse into our portfolio of excellence and luxury transformations.</p>
+                    <h2 class="text-brand-gold font-bold tracking-[0.2em] lg:tracking-[0.3em] uppercase text-xs lg:text-sm mb-3 lg:mb-4">Portfolio</h2>
+                    <h3 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-white mb-2 lg:mb-4">Featured Projects</h3>
+                    <p class="text-gray-400 text-sm lg:text-lg max-w-xl font-light">A curated glimpse into our portfolio of excellence and luxury transformations.</p>
                 </div>
-                <a href="#" class="hidden md:inline-block px-8 py-4 border border-white/20 text-white rounded-full hover:bg-white hover:text-brand-dark transition-all duration-300 mt-8 md:mt-0 text-xs font-bold tracking-widest uppercase">View Full Gallery</a>
+                <a href="#" class="hidden md:inline-block px-6 lg:px-8 py-3 lg:py-4 border border-white/20 text-white rounded-full hover:bg-white hover:text-brand-dark transition-all duration-300 mt-6 md:mt-0 text-xs font-bold tracking-widest uppercase">View Full Gallery</a>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
                 <!-- Gallery Item 1 -->
-                <div class="group relative overflow-hidden rounded-xl h-96 reveal">
+                <div class="group relative overflow-hidden rounded-xl h-64 lg:h-96 reveal">
                     <img src="https://image.qwenlm.ai/public_source/30fc3533-c093-40eb-98a7-78430891ab04/16c398d5b-df88-42a7-8755-f8923d7698cc.png" alt="Bathroom Reno" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                        <span class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-2">Bathroom</span>
-                        <h4 class="text-white text-2xl font-serif font-bold">Modern Spa Retreat</h4>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 lg:p-8">
+                        <span class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-1 lg:mb-2">Bathroom</span>
+                        <h4 class="text-white text-lg lg:text-2xl font-serif font-bold">Modern Spa Retreat</h4>
                     </div>
                 </div>
 
                 <!-- Gallery Item 2 -->
-                <div class="group relative overflow-hidden rounded-xl h-96 lg:col-span-2 reveal">
+                <div class="group relative overflow-hidden rounded-xl h-64 lg:h-96 lg:col-span-2 reveal">
                     <img src="https://image.qwenlm.ai/public_source/30fc3533-c093-40eb-98a7-78430891ab04/185acea17-fd97-4239-8e51-164f005aaa0f.png" alt="Exterior & Bedroom" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                        <span class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-2">Exterior & Interior</span>
-                        <h4 class="text-white text-2xl font-serif font-bold">Modern Facade & Master Suite</h4>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 lg:p-8">
+                        <span class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-1 lg:mb-2">Exterior & Interior</span>
+                        <h4 class="text-white text-lg lg:text-2xl font-serif font-bold">Modern Facade & Master Suite</h4>
                     </div>
                 </div>
 
                 <!-- Gallery Item 3 -->
-                <div class="group relative overflow-hidden rounded-xl h-96 lg:col-span-3 reveal">
+                <div class="group relative overflow-hidden rounded-xl h-64 lg:h-96 lg:col-span-3 reveal">
                     <img src="https://image.qwenlm.ai/public_source/30fc3533-c093-40eb-98a7-78430891ab04/14fe7674c-5f53-4f60-9596-e4566709f018.png" alt="Flooring" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8">
-                        <span class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-2">Flooring</span>
-                        <h4 class="text-white text-2xl font-serif font-bold">Sunlit Hardwood Installation</h4>
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-4 lg:p-8">
+                        <span class="text-brand-gold text-xs font-bold uppercase tracking-widest mb-1 lg:mb-2">Flooring</span>
+                        <h4 class="text-white text-lg lg:text-2xl font-serif font-bold">Sunlit Hardwood Installation</h4>
                     </div>
                 </div>
             </div>
             
-            <div class="mt-12 text-center md:hidden">
-                <a href="#" class="inline-block px-8 py-4 border border-white/20 text-white rounded-full hover:bg-white hover:text-brand-dark transition-all duration-300 text-xs font-bold tracking-widest uppercase">View Full Gallery</a>
+            <div class="mt-8 lg:mt-12 text-center md:hidden">
+                <a href="#" class="inline-block px-6 py-3 border border-white/20 text-white rounded-full hover:bg-white hover:text-brand-dark transition-all duration-300 text-xs font-bold tracking-widest uppercase">View Full Gallery</a>
             </div>
         </div>
     </section>
 
-    <!-- Service Areas -->
-    <section id="areas" class="py-24 bg-brand-gray border-y border-white/5">
-        <div class="max-w-7xl mx-auto px-6 text-center reveal">
-            <h2 class="text-3xl font-serif font-bold text-white mb-12">Proudly Serving Houston & Surrounding Areas</h2>
-            <div class="flex flex-wrap justify-center gap-4">
-                <span class="px-8 py-4 bg-white/5 rounded-full text-gray-300 hover:text-brand-gold hover:bg-white/10 transition-all duration-300 cursor-default text-sm font-medium tracking-wide">Houston</span>
-                <span class="px-8 py-4 bg-white/5 rounded-full text-gray-300 hover:text-brand-gold hover:bg-white/10 transition-all duration-300 cursor-default text-sm font-medium tracking-wide">The Woodlands</span>
-                <span class="px-8 py-4 bg-white/5 rounded-full text-gray-300 hover:text-brand-gold hover:bg-white/10 transition-all duration-300 cursor-default text-sm font-medium tracking-wide">Sugar Land</span>
-                <span class="px-8 py-4 bg-white/5 rounded-full text-gray-300 hover:text-brand-gold hover:bg-white/10 transition-all duration-300 cursor-default text-sm font-medium tracking-wide">Katy</span>
-                <span class="px-8 py-4 bg-white/5 rounded-full text-gray-300 hover:text-brand-gold hover:bg-white/10 transition-all duration-300 cursor-default text-sm font-medium tracking-wide">Pearland</span>
-                <span class="px-8 py-4 bg-white/5 rounded-full text-gray-300 hover:text-brand-gold hover:bg-white/10 transition-all duration-300 cursor-default text-sm font-medium tracking-wide">Memorial</span>
-                <span class="px-8 py-4 bg-white/5 rounded-full text-gray-300 hover:text-brand-gold hover:bg-white/10 transition-all duration-300 cursor-default text-sm font-medium tracking-wide">River Oaks</span>
-                <span class="px-8 py-4 bg-white/5 rounded-full text-gray-300 hover:text-brand-gold hover:bg-white/10 transition-all duration-300 cursor-default text-sm font-medium tracking-wide">Cypress</span>
+    <!-- Service Areas (responsive chips) -->
+    <section id="areas" class="py-16 lg:py-24 bg-brand-gray border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 text-center reveal">
+            <h2 class="text-2xl lg:text-3xl font-serif font-bold text-white mb-8 lg:mb-12">Proudly Serving Houston & Surrounding Areas</h2>
+            <div class="flex flex-wrap justify-center gap-2 lg:gap-4">
+                <span class="px-5 lg:px-8 py-3 lg:py-4 bg-white/5 rounded-full text-gray-300 hover:text-brand-gold hover:bg-white/10 transition-all duration-300 cursor-default text-xs lg:text-sm font-medium tracking-wide">Houston</span>
+                <span class="px-5 lg:px-8 py-3 lg:py-4 bg-white/5 rounded-full text-gray-300 hover:text-brand-gold hover:bg-white/10 transition-all duration-300 cursor-default text-xs lg:text-sm font-medium tracking-wide">The Woodlands</span>
+                <span class="px-5 lg:px-8 py-3 lg:py-4 bg-white/5 rounded-full text-gray-300 hover:text-brand-gold hover:bg-white/10 transition-all duration-300 cursor-default text-xs lg:text-sm font-medium tracking-wide">Sugar Land</span>
+                <span class="px-5 lg:px-8 py-3 lg:py-4 bg-white/5 rounded-full text-gray-300 hover:text-brand-gold hover:bg-white/10 transition-all duration-300 cursor-default text-xs lg:text-sm font-medium tracking-wide">Katy</span>
+                <span class="px-5 lg:px-8 py-3 lg:py-4 bg-white/5 rounded-full text-gray-300 hover:text-brand-gold hover:bg-white/10 transition-all duration-300 cursor-default text-xs lg:text-sm font-medium tracking-wide">Pearland</span>
+                <span class="px-5 lg:px-8 py-3 lg:py-4 bg-white/5 rounded-full text-gray-300 hover:text-brand-gold hover:bg-white/10 transition-all duration-300 cursor-default text-xs lg:text-sm font-medium tracking-wide">Memorial</span>
+                <span class="px-5 lg:px-8 py-3 lg:py-4 bg-white/5 rounded-full text-gray-300 hover:text-brand-gold hover:bg-white/10 transition-all duration-300 cursor-default text-xs lg:text-sm font-medium tracking-wide">River Oaks</span>
+                <span class="px-5 lg:px-8 py-3 lg:py-4 bg-white/5 rounded-full text-gray-300 hover:text-brand-gold hover:bg-white/10 transition-all duration-300 cursor-default text-xs lg:text-sm font-medium tracking-wide">Cypress</span>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-32 bg-brand-dark relative overflow-hidden">
-        <!-- Decorative bg element -->
+    <!-- Contact Section (responsive) -->
+    <section id="contact" class="py-20 lg:py-32 bg-brand-dark relative overflow-hidden">
         <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-brand-gray to-transparent opacity-50 pointer-events-none"></div>
-
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="grid lg:grid-cols-2 gap-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
+            <div class="grid lg:grid-cols-2 gap-12 lg:gap-20">
                 <div class="reveal">
-                    <h2 class="text-brand-gold font-bold tracking-[0.3em] uppercase text-sm mb-4">Contact Us</h2>
-                    <h3 class="text-5xl md:text-6xl font-serif font-bold text-white mb-8 leading-tight">Let's Build Your <br><span class="text-gradient-gold">Dream Space</span></h3>
-                    <p class="text-gray-400 text-lg mb-12 font-light">Ready to start your renovation? Contact us today for a free consultation and quote.</p>
+                    <h2 class="text-brand-gold font-bold tracking-[0.2em] lg:tracking-[0.3em] uppercase text-xs lg:text-sm mb-3 lg:mb-4">Contact Us</h2>
+                    <h3 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-serif font-bold text-white mb-6 lg:mb-8 leading-tight">Let's Build Your <br><span class="text-gradient-gold">Dream Space</span></h3>
+                    <p class="text-gray-400 text-sm lg:text-lg mb-8 lg:mb-12 font-light">Ready to start your renovation? Contact us today for a free consultation and quote.</p>
                     
-                    <div class="space-y-8">
-                        <div class="flex items-start gap-6">
-                            <div class="w-14 h-14 bg-brand-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
-                                <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                    <div class="space-y-6 lg:space-y-8">
+                        <div class="flex items-start gap-4 lg:gap-6">
+                            <div class="w-12 h-12 lg:w-14 lg:h-14 bg-brand-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 lg:w-6 lg:h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
                             </div>
                             <div>
-                                <h4 class="text-white font-bold text-lg mb-1">Visit Us</h4>
-                                <p class="text-gray-400 font-light">1234 Innovation Blvd, Houston, TX 77002</p>
+                                <h4 class="text-white font-bold text-base lg:text-lg mb-1">Visit Us</h4>
+                                <p class="text-gray-400 text-sm lg:text-base font-light">1234 Innovation Blvd, Houston, TX 77002</p>
                             </div>
                         </div>
-                        <div class="flex items-start gap-6">
-                            <div class="w-14 h-14 bg-brand-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
-                                <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                        <div class="flex items-start gap-4 lg:gap-6">
+                            <div class="w-12 h-12 lg:w-14 lg:h-14 bg-brand-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 lg:w-6 lg:h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
                             </div>
                             <div>
-                                <h4 class="text-white font-bold text-lg mb-1">Call Us</h4>
-                                <p class="text-gray-400 font-light">(713) 555-0123</p>
+                                <h4 class="text-white font-bold text-base lg:text-lg mb-1">Call Us</h4>
+                                <p class="text-gray-400 text-sm lg:text-base font-light">(713) 555-0123</p>
                             </div>
                         </div>
-                        <div class="flex items-start gap-6">
-                            <div class="w-14 h-14 bg-brand-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
-                                <svg class="w-6 h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <div class="flex items-start gap-4 lg:gap-6">
+                            <div class="w-12 h-12 lg:w-14 lg:h-14 bg-brand-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 lg:w-6 lg:h-6 text-brand-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
                             </div>
                             <div>
-                                <h4 class="text-white font-bold text-lg mb-1">Email Us</h4>
-                                <p class="text-gray-400 font-light">hello@gatluakremodeling.com</p>
+                                <h4 class="text-white font-bold text-base lg:text-lg mb-1">Email Us</h4>
+                                <p class="text-gray-400 text-sm lg:text-base font-light">hello@gatluakremodeling.com</p>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="glass p-10 rounded-2xl border border-white/10 reveal">
-                    <form class="space-y-6" onsubmit="event.preventDefault(); alert('Message sent! We will get back to you.');">
-                        <div class="grid grid-cols-2 gap-6">
+                <div class="glass p-6 lg:p-10 rounded-2xl border border-white/10 reveal">
+                    <form class="space-y-5 lg:space-y-6" onsubmit="event.preventDefault(); alert('Message sent! We will get back to you.');">
+                        <div class="grid grid-cols-2 gap-4 lg:gap-6">
                             <div>
-                                <label class="block text-xs text-gray-400 mb-2 uppercase tracking-widest">Name</label>
-                                <input type="text" class="modern-input w-full px-5 py-4 rounded-sm" required>
+                                <label class="block text-xs text-gray-400 mb-1 lg:mb-2 uppercase tracking-widest">Name</label>
+                                <input type="text" class="modern-input w-full px-4 lg:px-5 py-3 lg:py-4 rounded-sm text-sm" required>
                             </div>
                             <div>
-                                <label class="block text-xs text-gray-400 mb-2 uppercase tracking-widest">Phone</label>
-                                <input type="tel" class="modern-input w-full px-5 py-4 rounded-sm" required>
+                                <label class="block text-xs text-gray-400 mb-1 lg:mb-2 uppercase tracking-widest">Phone</label>
+                                <input type="tel" class="modern-input w-full px-4 lg:px-5 py-3 lg:py-4 rounded-sm text-sm" required>
                             </div>
                         </div>
                         <div>
-                            <label class="block text-xs text-gray-400 mb-2 uppercase tracking-widest">Email</label>
-                            <input type="email" class="modern-input w-full px-5 py-4 rounded-sm" required>
+                            <label class="block text-xs text-gray-400 mb-1 lg:mb-2 uppercase tracking-widest">Email</label>
+                            <input type="email" class="modern-input w-full px-4 lg:px-5 py-3 lg:py-4 rounded-sm text-sm" required>
                         </div>
                         <div>
-                            <label class="block text-xs text-gray-400 mb-2 uppercase tracking-widest">Message</label>
-                            <textarea rows="4" class="modern-input w-full px-5 py-4 rounded-sm" required></textarea>
+                            <label class="block text-xs text-gray-400 mb-1 lg:mb-2 uppercase tracking-widest">Message</label>
+                            <textarea rows="4" class="modern-input w-full px-4 lg:px-5 py-3 lg:py-4 rounded-sm text-sm" required></textarea>
                         </div>
-                        <button type="submit" class="w-full py-5 bg-gradient-to-r from-brand-gold to-yellow-600 text-brand-dark font-bold tracking-widest uppercase rounded-sm hover:shadow-lg hover:shadow-brand-gold/30 transition-all duration-300 btn-luxury">
+                        <button type="submit" class="w-full py-4 lg:py-5 bg-gradient-to-r from-brand-gold to-yellow-600 text-brand-dark font-bold tracking-widest uppercase rounded-sm text-xs lg:text-sm hover:shadow-lg hover:shadow-brand-gold/30 transition-all duration-300 btn-luxury">
                             Send Message
                         </button>
                     </form>
@@ -550,21 +559,87 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-black py-16 border-t border-white/10">
-        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-            <div class="text-center md:text-left">
-                <a href="#" class="text-xl font-serif font-bold tracking-widest text-white flex items-center gap-3 justify-center md:justify-start">
-                    <span class="w-8 h-8 bg-gradient-to-br from-brand-gold to-yellow-600 rounded-sm flex items-center justify-center text-brand-dark font-black text-sm">G</span>
-                    GATLUAK<span class="text-brand-gold">REMODELING</span>
-                </a>
-                <p class="text-gray-500 text-sm mt-4">© 2026 Gatluak Remodeling. All rights reserved.</p>
+    <!-- NEW FOOTER (comprehensive) -->
+    <footer class="bg-black pt-16 pb-8 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6">
+            <!-- Main footer grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 pb-12 lg:pb-16">
+                
+                <!-- About Company -->
+                <div class="lg:col-span-1">
+                    <a href="#" class="text-xl font-serif font-bold tracking-widest text-white flex items-center gap-3 mb-4">
+                        <span class="w-8 h-8 bg-gradient-to-br from-brand-gold to-yellow-600 rounded-sm flex items-center justify-center text-brand-dark font-black text-sm">G</span>
+                        <span>GATLUAK <span class="text-brand-gold">REMODELING</span></span>
+                    </a>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-4">Houston's premier renovation experts, delivering luxury craftsmanship and modern design since 2010.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-500 hover:text-brand-gold transition-colors"><span class="text-sm">IG</span></a>
+                        <a href="#" class="text-gray-500 hover:text-brand-gold transition-colors"><span class="text-sm">FB</span></a>
+                        <a href="#" class="text-gray-500 hover:text-brand-gold transition-colors"><span class="text-sm">LI</span></a>
+                        <a href="#" class="text-gray-500 hover:text-brand-gold transition-colors"><span class="text-sm">HZ</span></a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-white text-sm font-bold tracking-widest uppercase mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Home</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">About Us</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Services</a></li>
+                        <li><a href="#gallery" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Portfolio</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Services -->
+                <div>
+                    <h4 class="text-white text-sm font-bold tracking-widest uppercase mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Kitchen Remodeling</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Bathroom Renovation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Flooring Installation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Full Home Renovation</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-brand-gold text-sm transition-colors">Custom Millwork</a></li>
+                    </ul>
+                </div>
+
+                <!-- Service Areas -->
+                <div>
+                    <h4 class="text-white text-sm font-bold tracking-widest uppercase mb-4">Service Areas</h4>
+                    <ul class="space-y-2">
+                        <li><span class="text-gray-400 text-sm">Houston</span></li>
+                        <li><span class="text-gray-400 text-sm">The Woodlands</span></li>
+                        <li><span class="text-gray-400 text-sm">Sugar Land</span></li>
+                        <li><span class="text-gray-400 text-sm">Katy</span></li>
+                        <li><span class="text-gray-400 text-sm">Pearland + more</span></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="text-white text-sm font-bold tracking-widest uppercase mb-4">Contact</h4>
+                    <ul class="space-y-3">
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 text-brand-gold mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            <span class="text-gray-400 text-sm">(713) 555-0123</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 text-brand-gold mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            <span class="text-gray-400 text-sm break-all">hello@gatluakremodeling.com</span>
+                        </li>
+                        <li class="flex items-start gap-2">
+                            <svg class="w-4 h-4 text-brand-gold mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                            <span class="text-gray-400 text-sm">1234 Innovation Blvd, Houston, TX 77002</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
-            <div class="flex space-x-8">
-                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors">Instagram</a>
-                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors">Facebook</a>
-                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors">LinkedIn</a>
-                <a href="#" class="text-gray-400 hover:text-brand-gold transition-colors">Houzz</a>
+
+            <!-- Bottom bar with attribution -->
+            <div class="pt-8 border-t border-white/10 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-500">
+                <p>© 2026 Gatluak Remodeling. All rights reserved.</p>
+                <p>Designed by <a href="https://crestwebstudio.com" target="_blank" rel="noopener noreferrer" class="text-brand-gold hover:underline font-medium">Crest Web Studio</a></p>
             </div>
         </div>
     </footer>
@@ -574,12 +649,12 @@
         const navbar = document.getElementById('navbar');
         window.addEventListener('scroll', () => {
             if (window.scrollY > 50) {
-                navbar.classList.add('glass', 'py-4');
-                navbar.classList.remove('py-8', 'border-white/0');
+                navbar.classList.add('glass', 'py-3', 'lg:py-4');
+                navbar.classList.remove('py-6', 'border-white/0');
                 navbar.classList.add('border-white/10');
             } else {
-                navbar.classList.remove('glass', 'py-4', 'border-white/10');
-                navbar.classList.add('py-8', 'border-white/0');
+                navbar.classList.remove('glass', 'py-3', 'lg:py-4', 'border-white/10');
+                navbar.classList.add('py-6', 'border-white/0');
             }
         });
 
@@ -640,9 +715,7 @@
             }
         }
         window.addEventListener("scroll", reveal);
-        // Trigger once on load
         reveal();
     </script>
 </body>
 </html>
-
